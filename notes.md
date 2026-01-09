@@ -107,4 +107,4 @@ Cuando la selección es aleatoria, todos los elementos del espacio muestral tien
 
 $ P(S) = 1$
 
-$ P(S) = P(e_1)$
+$ P(S) = P(e_1) + P(e_2) + P(e_3) + ... + P(e_n)$
