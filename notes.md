@@ -7,7 +7,7 @@ Los horarios de asesoría son:
 
 Cubículo: [Esperando]
 ## Bibliografía
-- ["Probabilidad y Estadística para ingenieros y ciencia"]( "Ver libro")
+- ["Probabilidad y Estadística para ingenieros y ciencia"](https://github.com/dantecc10/probability-and-statistics/blob/master/8va-probabilidad-y-estadistica-para-ingenier-walpo_260109_092408.pdf "Ver libro")
 
 ## Contenidos
 Probabilidad y Estadística
