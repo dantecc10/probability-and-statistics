@@ -21,6 +21,7 @@ Contenidos:
 - Participación
 - Asistencia
 
+**"Todo cuenta".**
 
 ## Sesiones
 ### Viernes 9 de enero
