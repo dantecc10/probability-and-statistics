@@ -80,11 +80,17 @@ Experimento 2: Lanzar 2 veces un dado y realizar las anotaciones.
 S = {(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), ..., (6, 6)}
 
 Los eventos son subconjuntos del espacio muestral, así como el propio espacio muestral de sí mismo.
+
 **Podemos afirmar que**
 
 $$A \subseteq S$$
 
 $$\varnothing \subseteq S$$
 
-
 El espacio muestral se puede caracterizar por la probabilidad. Son equiprobables si cada evento tiene el mismo peso que todos los demás.
+La cardinalidad de un espacio muestral depende del experimento: puede ser finito o infinito.
+Algunos espacios muestrales infinitos son numerables, así como todos los finitos. Los infinitos son no numerables.
+
+Los espacios muestrales **numerables** se conocen como **discretos**.
+
+Los espacios muestrales **no numerables** se conocen como **continuos**.
