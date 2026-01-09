@@ -110,3 +110,11 @@ $P(S) = 1$
 $ P(S) = P(e_1) + P(e_2) + P(e_3) + \cdots + P(e_n) $
 
 $ P(S) = \sum_{i=1}^{n} P(e_i) $
+
+
+Cuando se tiene un espacio muestral equiprobable y además es finito:
+
+
+$$A \subseteq S$$
+
+$$ P(A) = \frac{P(S)}{P(e_i)} $$
