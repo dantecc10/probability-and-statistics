@@ -97,3 +97,14 @@ Los espacios muestrales **numerables** se conocen como **discretos**.
 
 Los espacios muestrales **no numerables** se conocen como **continuos**.
 
+¿Cómo asignar probabilidades?
+
+Antes de asignar probabilidades a los subconjuntos del espacio es necesario obtener probabilidades a cada uno de los elementos del espacio.
+
+Cuando la selección es aleatoria, todos los elementos del espacio muestral tienen la misma probabilidad de ser seleccionados.
+
+**Probabilidad**
+
+$$P(S) = 1$$
+
+$$P(S) = P(e_1)$$
