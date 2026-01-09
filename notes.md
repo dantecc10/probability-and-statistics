@@ -87,6 +87,8 @@ $$A \subseteq S$$
 
 $$\varnothing \subseteq S$$
 
+$$S \subseteq S$$
+
 El espacio muestral se puede caracterizar por la probabilidad. Son equiprobables si cada evento tiene el mismo peso que todos los demás.
 La cardinalidad de un espacio muestral depende del experimento: puede ser finito o infinito.
 Algunos espacios muestrales infinitos son numerables, así como todos los finitos. Los infinitos son no numerables.
@@ -94,3 +96,4 @@ Algunos espacios muestrales infinitos son numerables, así como todos los finito
 Los espacios muestrales **numerables** se conocen como **discretos**.
 
 Los espacios muestrales **no numerables** se conocen como **continuos**.
+
