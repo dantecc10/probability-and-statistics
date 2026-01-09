@@ -49,7 +49,7 @@ Los espacios muestrales van a depender directamente de un experimento: ¿qué en
 ChatGPT:
 >En probabilidad y estadística, un experimento es un proceso o procedimiento bien definido que, al ejecutarse bajo las mismas condiciones, puede producir diferentes resultados, aunque el conjunto de resultados posibles sea conocido.
 >
-Formalmente, un experimento se caracteriza por:
+> Formalmente, un experimento se caracteriza por:
 >
 Ser reproducible: puede repetirse en condiciones similares.
 Tener resultados observables: cada ejecución genera un resultado identificable.
