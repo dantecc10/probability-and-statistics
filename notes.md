@@ -60,3 +60,17 @@ Lanzar una moneda y observar si cae cara o cruz.
 Medir el tiempo de vida útil de un foco.
 Registrar el número de defectos en un lote de producción.
 Extraer una carta de una baraja.
+
+
+
+
+
+
+---
+
+El espacio muestral es un conjunto no vacío con las posibilidades de un experimento y se suele denotar por "S".
+Experimento 1:  Usemos el ejemplo de lanzar una moneda y realizar la anotación.
+Espacio muestral: S = {"Águila", "Sol"}.
+
+Experimento 2: Lanzar 2 veces un dado y realizar las anotaciones.
+S = {(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), ..., (6, 6)}
