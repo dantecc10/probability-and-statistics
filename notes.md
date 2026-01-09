@@ -81,5 +81,10 @@ S = {(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), ..., (6, 6)}
 
 Los eventos son subconjuntos del espacio muestral, así como el propio espacio muestral de sí mismo.
 **Podemos afirmar que**
+
 $$A \subseteq S$$
+
 $$\varnothing \subseteq S$$
+
+
+El espacio muestral se puede caracterizar por la probabilidad. Son equiprobables si cada evento tiene el mismo peso que todos los demás.
