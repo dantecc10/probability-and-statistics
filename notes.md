@@ -51,15 +51,19 @@ ChatGPT:
 >
 > Formalmente, un experimento se caracteriza por:
 >
-Ser reproducible: puede repetirse en condiciones similares.
-Tener resultados observables: cada ejecución genera un resultado identificable.
-Incertidumbre en el resultado individual: no se puede predecir con certeza qué resultado ocurrirá antes de realizarlo.
-Conjunto de resultados posibles conocido: dicho conjunto se denomina espacio muestral.
-Ejemplos:
-Lanzar una moneda y observar si cae cara o cruz.
-Medir el tiempo de vida útil de un foco.
-Registrar el número de defectos en un lote de producción.
-Extraer una carta de una baraja.
+> Ser reproducible: puede repetirse en condiciones similares.
+> Tener resultados observables: cada ejecución genera un resultado identificable.
+> Incertidumbre en el resultado individual: no se puede predecir con certeza qué resultado ocurrirá antes de realizarlo.
+> Conjunto de resultados posibles conocido: dicho conjunto se denomina espacio muestral.
+> Ejemplos:
+>
+>- Lanzar una moneda y observar si cae cara o cruz.
+>
+>- Medir el tiempo de vida útil de un foco.
+>
+>- Registrar el número de defectos en un lote de producción.
+>
+>- Extraer una carta de una baraja.
 
 
 
