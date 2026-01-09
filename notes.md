@@ -78,3 +78,6 @@ Espacio muestral: S = {"Águila", "Sol"}.
 
 Experimento 2: Lanzar 2 veces un dado y realizar las anotaciones.
 S = {(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6), ..., (6, 6)}
+
+Los eventos son subconjuntos del espacio muestral, así como el propio espacio muestral de sí mismo.
+$$A \subseteq S)$$
