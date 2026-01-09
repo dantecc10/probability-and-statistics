@@ -124,7 +124,7 @@ Cuando dos conjuntos no tienen elementos en común; son mutuamente excluyentes:
 
 $A \cap B = \varnothing$
 
-$P(A \cup B) = $P(A) + P(B)$
+$P(A \cup B) = P(A) + P(B)$
 
 $P(S) = P(A \cup A')$
 
