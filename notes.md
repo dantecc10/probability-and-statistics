@@ -105,6 +105,6 @@ Cuando la selección es aleatoria, todos los elementos del espacio muestral tien
 
 **Probabilidad**
 
-$$ P(S) = 1$$
+$ P(S) = 1$
 
-$$ P(S) = P(e_1)$$
+$ P(S) = P(e_1)$
