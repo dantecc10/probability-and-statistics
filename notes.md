@@ -126,6 +126,6 @@ $A \cap B = \varnothing$
 
 $P(A \cup B) = $P(A) + P(B)$
 
-$P(S) = P(A \cup A\rq)$
+$P(S) = P(A \cup A\rq )$
 
-$P(A) + p(A\rq) = 1$
+$P(A) + p(A \rq) = 1$
