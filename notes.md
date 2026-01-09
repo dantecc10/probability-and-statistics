@@ -6,6 +6,9 @@ Los horarios de asesoría son:
 - 9 - 11
 
 Cubículo: [Esperando]
+## Bibliografía
+- ["Probabilidad y Estadística para ingenieros y ciencia"]( "Ver libro")
+
 ## Contenidos
 Probabilidad y Estadística
 Contenidos:
