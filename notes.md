@@ -32,4 +32,10 @@ Se empieza a hablar de los criterios de evaluación.
 
 Se habla de la primera tarea: grabar un video de 26 segundos en el que nos presentemos. Esta actividad contará como un examen. La calificación mínima será de un 7 en esta entrega.
 
+#### Enfoques de la probabilidad
+Enfoques de la probabilidad:
+- Clásico
+- Frecuencial
+- Axiomático
+- Subjetivo
 
