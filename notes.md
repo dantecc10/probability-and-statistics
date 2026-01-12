@@ -152,7 +152,7 @@ $a^5 - b^5 = (a - b)(a^4 + a^3b + a^2b^2 + ab^3 + b^4)$
 
 Ahora, aplicado a la probabilidad:
 
-$1 = 1 + r^1 + r^2 + \cdots + r^(n-1)$
+$1 = 1 + r^1 + r^2 + \cdots + r^{n-1}$
 
 
-$\lim_{n \to \infty} 1 + r^1 + r^2 + \cdots + r^(n-1)$
+$\lim_{n \to \infty} 1 + r^1 + r^2 + \cdots + r^{n-1}$
