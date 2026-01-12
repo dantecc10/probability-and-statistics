@@ -139,3 +139,11 @@ Para poder calcular la probabilidad de B, lo que necesitamos es calcular las pro
 La probabilidad del espacio debe ser siempre 1: $P(S) = 1$
 
 $P(S) = \sum_{i=1}^{\infty} \frac{1}{2}$
+
+Verificación:
+
+$a^3 - b^3 = (a - b)(a^2 + ab + b^2)$
+
+$a^4 - b^4 = (a - b)(a^3 + a^2b + ab^2 + b^3)$
+
+$a^5 - b^5 = (a - b)(a^4 + a^3b + a^2b^2 + ab^3 + b^4)$
