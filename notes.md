@@ -155,3 +155,4 @@ Ahora, aplicado a la probabilidad:
 $1 = 1 + r^1 + r^2 + \cdots + r^(n-1)$
 
 
+$\lim_{n \to \infty} 1 + r^1 + r^2 + \cdots + r^(n-1)$
