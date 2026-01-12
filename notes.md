@@ -148,4 +148,10 @@ $a^4 - b^4 = (a - b)(a^3 + a^2b + ab^2 + b^3)$
 
 $a^5 - b^5 = (a - b)(a^4 + a^3b + a^2b^2 + ab^3 + b^4)$
 
-\*(Podría ser necesario verificar mis signos)
+\*(Podría ser necesario verificar mis signos).
+
+Ahora, aplicado a la probabilidad:
+
+$1 = 1 + r^1 + r^2 + \cdots + r^(n-1)$
+
+
