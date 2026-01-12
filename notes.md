@@ -134,4 +134,8 @@ $P(A) + P(A') = 1$
 
 Repaso de los espacios muestrales.
 
-Para poder calcular la probabilidad de B, lo que necesitamos es calcular las probabilidades de cada uno de los elementos que la conforman: $P(B) = P(b_1) + P(b_2) + P(b_3) + \cdots + P(b_i)$
+Para poder calcular la probabilidad de B, lo que necesitamos es calcular las probabilidades de cada uno de los elementos que la conforman: $P(B) = P(b_1) + P(b_2) + P(b_3) + \cdots + P(b_n)$
+
+La probabilidad del espacio debe ser siempre 1: $P(S) = 1$
+
+$P(S) = \sum_{i=1}^{\infty} \frac{1}{2}$
