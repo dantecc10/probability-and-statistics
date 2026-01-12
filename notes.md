@@ -129,3 +129,9 @@ $P(A \cup B) = P(A) + P(B)$
 $P(S) = P(A \cup A')$
 
 $P(A) + P(A') = 1$
+
+### Lunes 12 de enero
+
+Repaso de los espacios muestrales.
+
+Para poder calcular la probabilidad de B, lo que necesitamos es calcular las probabilidades de cada uno de los elementos que la conforman: $P(B) = P(b_1) + P(b_2) + P(b_3) + \cdots + P(b_i)$
