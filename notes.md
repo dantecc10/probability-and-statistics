@@ -168,3 +168,5 @@ $P(A) = \frac{Card(A)}{Card(S)}$
 $\binom{n}{r} = \frac{n!}{(n-r)!r!}$
 
 $\binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \cdots + \binom{n}{n}$
+
+$(1 + 1)^n = \sum_{i=0}^{n} \binom{n}{i}$
