@@ -189,4 +189,4 @@ $R_1 \cap R_2 = \varnothing$
 
 $P(A) = P(R_1) + P(R_2) + P(R_3) + P(R_4) + P(R_5)$
 
-$R_1 = A - (C \cup B) = A \cap (C \cup B)$
+$R_1 = A - (C \cup B) = A \cap (C \cup B)'$
