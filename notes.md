@@ -160,6 +160,9 @@ $\lim_{n \to \infty} 1 + r^1 + r^2 + \cdots + r^{n-1}$
 ### Miércoles 14 de enero
 
 Repaso de la cardinalidad:
+A y B son subconjuntos de S:
+
+$A, B \subseteq S$
 
 $P(A) = \frac{Card(A)}{Card(S)}$
 
@@ -174,3 +177,5 @@ $(1 + 1)^n = \sum_{i=0}^{n} \binom{n}{i}$
 Independientemente de que nosotros tengamos "probable" o "equiprobable" la probabilidad de A siempre va a ser la suma de los pesos.
 
 $P(A) = \sum_{i=0}^{n} P(a_i) | a_i \in A$
+
+
