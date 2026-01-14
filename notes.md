@@ -178,4 +178,6 @@ Independientemente de que nosotros tengamos "probable" o "equiprobable" la proba
 
 $P(A) = \sum_{i=0}^{n} P(a_i) | a_i \in A$
 
+A y B son excluyentes:
 
+$\sum_{C \in A}{} P(C) + \sum_{C \in B}{} P(C) = P(A) + P(B)$
