@@ -166,3 +166,5 @@ $P(A) = \frac{Card(A)}{Card(S)}$
 ¿Cuántos tipos de cardinalidad existen?
 
 $\begin{pmatrix}n\cr r\cr\end{pmatrix} = \frac{n!}{(n - r)!r!}$
+
+$\binom{n}{r} = \frac{n!}{(n-r)!r!}$
