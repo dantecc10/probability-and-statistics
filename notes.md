@@ -170,3 +170,7 @@ $\binom{n}{r} = \frac{n!}{(n-r)!r!}$
 $\binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \cdots + \binom{n}{n}$
 
 $(1 + 1)^n = \sum_{i=0}^{n} \binom{n}{i}$
+
+Independientemente de que nosotros tengamos "probable" o "equiprobable" la probabilidad de A siempre va a ser la suma de los pesos.
+
+$P(A) = \sum_{i=0}^{n} P(a_i) | a_i \in A$
