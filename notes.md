@@ -156,3 +156,13 @@ $1 = 1 + r^1 + r^2 + \cdots + r^{n-1}$
 
 
 $\lim_{n \to \infty} 1 + r^1 + r^2 + \cdots + r^{n-1}$
+
+### Miércoles 14 de enero
+
+Repaso de la cardinalidad:
+
+$P(A) = \frac{Card(A)}{Card(S)}$
+
+¿Cuántos tipos de cardinalidad existen?
+
+$\begin{pmatrix}n\crr\cr\end{pmatrix} = \frac{n!}{(n - r)!r!}$
