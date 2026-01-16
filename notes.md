@@ -192,3 +192,33 @@ $P(A) = P(R_1) + P(R_2) + P(R_3) + P(R_4) + P(R_5)$
 $R_1 = A - (C \cup B) = A \cap (C \cup B)'$
 
 $P(A \cap B) = P(B) \cdot P(A|B)$
+
+
+### Viernes 16 de enero del 2026
+
+Entendamos la lectura:
+
+$P (A|B)$ se lee como *"la probabilidad de que ocurra A, dado que ocurrió B"*.
+
+Para el problema de clase:
+
+$A = Río contaminado$
+
+$B = Muestra que sale contaminada$
+
+$C = Se permite pescar$
+
+$P(A) = .3$
+
+$P(B|A) = .75$
+
+$P(B|A') = .2$
+
+$P(C|A \cap B) = .2$
+
+$P(C|A' \cap B) = .15$
+
+$P(C|A \cap B') = .8$
+
+$P(C|A' \cap B') = .9$
+
