@@ -226,9 +226,11 @@ $P(C|A' \cap B') = .9$
 
 Recordando algo de propiedades de conjuntos, sabemos que:
 
-1. $A \cap Y \cap Z = (X \cap Y) \ cap Z = X \cap (Y \cap Z)$
+1. $A \cap Y \cap Z = (X \cap Y) \cap Z = X \cap (Y \cap Z)$
 2. $X \cap Y = Y \cap X$
 3. $X \cap X = X$, $X \cup X = X$
+4. $X \subseteq Y \implies X \cap Y = X$
+5. $(X \cup Y) \cap Z = X \cap Z \cup Y \cap Z$
 
 $B = (A_i \cap B) \cup (A_2 \cap B) \cup (A_3 \cap B) \cup (A_4 \cap B)$
 
@@ -236,3 +238,4 @@ $C_i = (A_i \cap B), \forall i, j, \in {1, 2, 3, 4}$
 
 $(A_i \cap B) \cap (A_j \cap B) = \varnothing$
 
+$(A \cap C)' = A' \cup C'$
