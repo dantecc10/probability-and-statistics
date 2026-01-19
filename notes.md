@@ -267,7 +267,7 @@ $P(A) = P(4) + P(5) + P(6) = \frac{2}{9} + \frac{1}{9} + \frac{2}{9} = \frac{5}{
 
 $P(B|A) = P(4) = \frac{2}{5}$
 
-$P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(4)}{P(A)} = \frac{\frac{2}{9}}{\frac{5}{9}} = \frac{(2)(\cancel{9})}{(5)(\cancel{9+)} = \frac{2}{5}$
+$P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(4)}{P(A)} = \frac{\frac{2}{9}}{\frac{5}{9}} = \frac{(2)(\cancel{9})}{(5)(\cancel{9})} = \frac{2}{5}$
 
 #### Tarea:
 - Teorema de la Probabilidad Total
