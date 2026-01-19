@@ -256,7 +256,7 @@ $P(2) = P(4) = P(6) = 2P$, $P = \frac{2}{9}$.
 
 #### ¿Cuál es la probabilidad de que B sea un cuadrado perfecto?
 
-$B = {1, 4}$
+$B = \{1, 4\}$
 
 $P(B) = P(1) + P(4) = \frac{1}{9} + \frac{2}{9} = \frac{3}{9} \frac{1}{3}$
 
