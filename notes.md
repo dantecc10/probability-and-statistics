@@ -274,3 +274,6 @@ $P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(4)}{P(A)} = \frac{\frac{2}{9}}{\fra
 - Ley del Producto
 
 Traer algún apunte, entenderlo, leerlo.
+
+
+Y así terminó la clase.
