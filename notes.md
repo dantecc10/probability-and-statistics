@@ -272,4 +272,5 @@ $P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(4)}{P(A)} = \frac{\frac{2}{9}}{\fra
 #### Tarea:
 - Teorema de la Probabilidad Total
 - Ley del Producto
+
 Traer algún apunte, entenderlo, leerlo.
