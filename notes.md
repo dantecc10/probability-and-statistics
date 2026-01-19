@@ -222,3 +222,17 @@ $P(C|A \cap B') = .8$
 
 $P(C|A' \cap B') = .9$
 
+### Lunes 19 de enero
+
+Recordando algo de propiedades de conjuntos, sabemos que:
+
+1. $A \cap Y \cap Z = (X \cap Y) \ cap Z = X \cap (Y \cap Z)$
+2. $X \cap Y = Y \cap X$
+3. $X \cap X = X$, $X \cup X = X$
+
+$B = (A_i \cap B) \cup (A_2 \cap B) \cup (A_3 \cap B) \cup (A_4 \cap B)$
+
+$C_i = (A_i \cap B), \forall i, j, \in {1, 2, 3, 4}$
+
+$(A_i \cap B) \cap (A_j \cap B) = \varnothing$
+
