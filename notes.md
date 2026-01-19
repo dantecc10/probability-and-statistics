@@ -239,3 +239,29 @@ $C_i = (A_i \cap B), \forall i, j, \in {1, 2, 3, 4}$
 $(A_i \cap B) \cap (A_j \cap B) = \varnothing$
 
 $(A \cap C)' = A' \cup C'$
+
+Leemos la página 62 del libro (84 del PDF) sobre la **_Probabilidad Condicional_**.
+
+El lanzar un dado tiene como espacio muestral $S = {1, 2, 3, 4, 5, 6}.$
+
+Eso implica que $P(1) + P(2) + P(3) + P(4) + P(5) + P(6) = 1$.
+
+La probabilidad de los impares: $P(1) = P(3) = P(5)$.
+
+La probabilidad de los pares: $P(2) = P(4) = P(6)$.
+
+$P(1) = P(3) = P(5) = P$, $9P = 1 \implies P = \fraq{1}{9}$.
+
+$P(2) = P(4) = P(6) = 2P$, $P = \fraq{2}{9}$.
+
+#### ¿Cuál es la probabilidad de que B sea un cuadrado perfecto?
+
+$B = {1, 4}$
+
+$P(B) = P(1) + P(4) = \frac{1}{9} + \frac{2}{9} = \frac{3}{9} \frac{1}{3}$
+
+$A = {4, 5, 6}$
+
+$P(A) = P(4) + P(5) + P(6) = \frac{2}{9} + \frac{1}{9} + \frac{2}{9} = \frac{5}{9}$
+
+
