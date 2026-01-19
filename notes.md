@@ -250,9 +250,9 @@ La probabilidad de los impares: $P(1) = P(3) = P(5)$.
 
 La probabilidad de los pares: $P(2) = P(4) = P(6)$.
 
-$P(1) = P(3) = P(5) = P$, $9P = 1 \implies P = \fraq{1}{9}$.
+$P(1) = P(3) = P(5) = P$, $9P = 1 \implies P = \frac{1}{9}$.
 
-$P(2) = P(4) = P(6) = 2P$, $P = \fraq{2}{9}$.
+$P(2) = P(4) = P(6) = 2P$, $P = \frac{2}{9}$.
 
 #### ¿Cuál es la probabilidad de que B sea un cuadrado perfecto?
 
