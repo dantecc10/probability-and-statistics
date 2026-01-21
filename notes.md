@@ -289,3 +289,17 @@ la probabilidad de que ocurra cada causa $(P(B_i)) multiplicada por la probabili
 
 El 30 habrá una evaluación de Teams de manera presencial.
 
+Empezamos hablando de los temas que se quedaron de tarea.
+
+
+$P(B|A) = \frac{P(B \cap A)}{P(A)}$
+
+$P(B \cap A) = P(A) \cdot P(B|A)$
+
+$P(A \cap B) = P(A) \cdot P(B|A)$
+
+Entonces: $P(X \cap Y) = P(Y) \cdot P(X|Y)$ y $P(X \cap Y) = P(X) \cdot P(Y|X)$.
+
+Si $A$ y $B$ son independientes, significa que la ocurrecia de $A$ *no depende de* $B$ y viceversa.
+
+Como sabemos que $A$ y $B$ son independientes decimos que la probabilidad de que $A$ ocurra si $B$ ocurrió es $P(A|B) = P(A)$ y $P(B|A) = P(B)$.
