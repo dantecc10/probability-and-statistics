@@ -304,6 +304,8 @@ Si $A$ y $B$ son independientes, significa que la ocurrecia de $A$ *no depende d
 
 Como sabemos que $A$ y $B$ son independientes decimos que la probabilidad de que $A$ ocurra si $B$ ocurrió es $P(A|B) = P(A)$ y $P(B|A) = P(B)$.
 
+$P(A \cap B) = P(A) \cdot P(B)$
+
 > *"¿Cuándo utilizar suma en un conteo?, ¿cuándo utilizar un producto en un conteo?"*
 
 La parte del producto es simple porque cuando nos piden contar, tenemos que fijarnos en los eventos como tal para saber si ya se terminó el evento o aún no.
@@ -342,3 +344,7 @@ $i < j$
 Ahora, observamos otras fórmulas en el pizarrón:
 
 $P(A \cap B \cap C) = P(A \cap (B \cap C)) = P(A) \cdot P(B \cap C|A)$
+
+$P(B \cap C) \cdot P(A|B \cap C))$
+
+$P(B) \cdot P(C|B) \cdot P(A|B \cap C)$
