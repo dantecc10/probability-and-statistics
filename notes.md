@@ -360,3 +360,4 @@ Se lee un ejercicio:
 > a) que el sistema completo funcione y de
 > b) que el componente $C$ no funcione, dado que el sistema completo funciona. Suponga que los cuatro componentes funcionan de manera independiente.
 
+![Ejercicio 2.39](assets/img/ejercicio2.39.png)
