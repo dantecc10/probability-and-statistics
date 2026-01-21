@@ -348,3 +348,7 @@ $P(A \cap B \cap C) = P(A \cap (B \cap C)) = P(A) \cdot P(B \cap C|A)$
 $P(B \cap C) \cdot P(A|B \cap C))$
 
 $P(B) \cdot P(C|B) \cdot P(A|B \cap C)$
+
+Si $A_1, A_2, \cdots, A_k$ son excluyentes:
+
+$A_i \cap A_j = \varnothing, \forall i, j = 1, 2, 3, \cdots, k, i \neq$
