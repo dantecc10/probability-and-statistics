@@ -273,11 +273,19 @@ $P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{P(4)}{P(A)} = \frac{\frac{2}{9}}{\fra
 - Teorema de la Probabilidad Total
 - Ley del Producto
 
-Traer algún apunte, entenderlo, leerlo.
+Traer algún apunte, entenderlo, leerlo. Y así terminó la clase.
 
+### Teorema de la Probabilidad Total
+Este teorema calcula la probabilidad de un evento $(A)$ que puede ocurrir a través de múltiples caminos o causas mutuamente excluyentes $(B_i)$, sumando las probabilidades de cada "camino":
 
-Y así terminó la clase.
+$P(A) = \sum_P(A|B_i)P(B_i)$, es decir
+
+la probabilidad de que ocurra cada causa $(P(B_i)) multiplicada por la probabilidad de que $A$ ocurra dado que esa causa ocurrió $((P(A|B_i)))$. Este teorema es útil para descomponer un problema complejo en escenarios más simples, como la probabilidad de que un producto sea defectuoso considerando diferentes máquinas que lo fabrican.
+
 
 #### Miércoles 21 de enero
+
 ##### Nota
+
 El 30 habrá una evaluación de Teams de manera presencial.
+
