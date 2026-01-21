@@ -351,4 +351,4 @@ $P(B) \cdot P(C|B) \cdot P(A|B \cap C)$
 
 Si $A_1, A_2, \cdots, A_k$ son excluyentes:
 
-$A_i \cap A_j = \varnothing, \forall i, j = 1, 2, 3, \cdots, k, i \neq$
+$A_i \cap A_j = \varnothing, \forall i, j = 1, 2, 3, \cdots, k$, $i \neq j$
