@@ -361,3 +361,9 @@ Se lee un ejercicio:
 > b) que el componente $C$ no funcione, dado que el sistema completo funciona. Suponga que los cuatro componentes funcionan de manera independiente.
 
 ![Ejercicio 2.39](assets/img/ejercicio2.39.png)
+
+Por el maestro, no pude copiar algunas ecuaciones, las adjunto a continuación y quedo pendiente de la transcripción:
+
+![No me dejaban ver](assets/img/photo1.jpeg)
+
+![No me dejaban ver](assets/img/photo2.jpeg)
