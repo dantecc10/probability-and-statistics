@@ -334,3 +334,7 @@ $P(A_1 \cup A_2 \cup A_3 \cup A_4) = P(A_1) + P(A_2) + P(A_3) + P(A_4) - [P(A_1 
 
 
 $\binom{4}{2} = \frac{4!}{2!2!} = \frac{4 \cdot 3 \cdot 2!}{2!2!} = 6$ Esta es la cantidad de pares de intersecciones que se deben restar
+
+$P(\sum_{i=1}^{k}A_i) = \sum_{i=1}^{K}P(A_i) - \sum_{i, j = 1, 2, 3, \cdots, k}^{} P(A_i \cap A_j)$, donde:
+
+$i < j$
