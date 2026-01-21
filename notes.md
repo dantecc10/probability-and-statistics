@@ -277,3 +277,7 @@ Traer algún apunte, entenderlo, leerlo.
 
 
 Y así terminó la clase.
+
+#### Miércoles 21 de enero
+##### Nota
+El 30 habrá una evaluación de Teams de manera presencial.
