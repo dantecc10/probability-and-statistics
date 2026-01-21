@@ -304,10 +304,30 @@ Si $A$ y $B$ son independientes, significa que la ocurrecia de $A$ *no depende d
 
 Como sabemos que $A$ y $B$ son independientes decimos que la probabilidad de que $A$ ocurra si $B$ ocurrió es $P(A|B) = P(A)$ y $P(B|A) = P(B)$.
 
-> *¿Cuándo utilizar suma en un conteo?, ¿cuándo utilizar un producto en un conteo?*
+> *"¿Cuándo utilizar suma en un conteo?, ¿cuándo utilizar un producto en un conteo?"*
 
 La parte del producto es simple porque cuando nos piden contar, tenemos que fijarnos en los eventos como tal para saber si ya se terminó el evento o aún no.
 
 Si nos pidieran formar números de 3 cifras, y determinamos la primera, el evento no ha terminado, porque aún faltarían dos.
 
+Cuando algo se ha elegido, cuenta como parte del evento (por ejemplo, sobre el número de 3 cifras).
 
+Regla de producto y regla de la suma en el ámbito de la probabilidad.
+
+La regla de la suma es la suma de las probabilidades de los eventos menos la probabilidad de la intersección:
+
+$P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+
+$P(A \cap B) = P(A) \cdot P(B|A)$
+
+Esto se puede extender a más de dos conjuntos.
+
+Si tenemos 3 conjuntos: $A_1$, $A_2$ y $A_3$:
+
+$P(A_1 \cup A_2 \cup A_3) = P(A_1) + P(A_2) + P(A_3)$
+
+$- [P(A_1 \cap A_2) + P(A_1 \cap A_3) + P(A_2 \cap A_3)]$
+
+$+ P(A_1 \cap A_2 \cap A_3)$
+
+$\binom{n}{r}
