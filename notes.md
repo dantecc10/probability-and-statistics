@@ -352,3 +352,10 @@ $P(B) \cdot P(C|B) \cdot P(A|B \cap C)$
 Si $A_1, A_2, \cdots, A_k$ son excluyentes:
 
 $A_i \cap A_j = \varnothing, \forall i, j = 1, 2, 3, \cdots, k$, $i \neq j$
+
+Se lee un ejercicio:
+
+> **Ejemplo 2.39**:
+> Un sistema eléctrico consta de cuatro componentes, como se ilustra en la figura 2.9. El sistema funciona si los componentes $A$ y $B$ funcionan, y si funciona cualquiera de los componentes $C$ o $D$. La confiabilidad (probabilidad de que funcionen) de cada uno de los componentes también se muestra en la figura 2.9. Calcule la probabilidad de 
+> a) que el sistema completo funcione y de
+> b) que el componente $C$ no funcione, dado que el sistema completo funciona. Suponga que los cuatro componentes funcionan de manera independiente.
