@@ -391,3 +391,14 @@ Se trabaja el ejercicio 2.93:
 
 ![Figura 2.11: Diagrama para el ejercicio 2.93](assets/img/ejercicio2.93.png)
 
+Desarrollo a partir de las dos vías posibles de que el sistema funcione:
+
+$P(A \cap B \cap D) + P(A \cap C \cap D) - P(A \cap B \cap C \cap D)$
+
+$P(A \cap D) \cdot [(P(B) + P(C)) - P(B \cap C)]$
+
+$P(A) \cdot P(D) \cdot [P(B) + P(C) - P(B) \cdot P(C)]$
+
+$P(A) \cdot P(D) \cdot [P(B) \cdot (1 - P(C)) + P(C)]$
+
+$P(A) \cdot P(D) \cdot [P(B) \cdot P(C') + P(C)]$
