@@ -455,4 +455,4 @@ $P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)) = \
 
 Ahora, aunque la fórmula parece bastante densa, se simplifica considerando el valor previo que había obtenido para $(A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$, que es $.75112$. Sustituyo:
 
-P((1 - .7) | (.75112)) = \frac{(1 - .7) \cdot (.75112)}{(.75112)}
+$P((1 - .7) | (.75112)) = \frac{(1 - .7) \cdot (.75112)}{(.75112)}$
