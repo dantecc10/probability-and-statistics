@@ -374,7 +374,7 @@ Retomamos el ejercicio de la sesión anterior.
 
 Consideramos $P[(A \cap B \cap D) \cup (A \cap C \cap D)]$:
 
-$P(X \cup Y) = P(X) + P(Y) - P(X \cap Y)$
+$P(X \cup Y) = P(X) \cup P(Y) \setminus P(X \cap Y)$
 
 $P(A \cap B \cap D) + P(A \cap C \cap D) - P(A \cap B \cap C \cap D)$
 
@@ -393,9 +393,9 @@ Se trabaja el ejercicio 2.93:
 
 Desarrollo a partir de las dos vías posibles de que el sistema funcione:
 
-$P(A \cap B \cap D) + P(A \cap C \cap D) - P(A \cap B \cap C \cap D)$
+$P(A \cap B \cap D) \cup P(A \cap C \cap D) \setminus P(A \cap B \cap C \cap D)$
 
-$P(A \cap D) \cdot [(P(B) + P(C)) - P(B \cap C)]$
+$P(A \cap D) \cdot [(P(B) \cup P(C)) \setminus P(B \cap C)]$
 
 $P(A) \cdot P(D) \cdot [P(B) + P(C) - P(B) \cdot P(C)]$
 
@@ -414,11 +414,11 @@ La probabilidad de que el sistem funcione, sería la suma (unión) de las probab
 
 Queda:
 
-$(A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$
+$(A \cap B) \cup (C \cap D \cap E) \setminus (A \cap B \cap C \cap D \cap E)$
 
 Esto se puede desarrollar como:
 
-$(P(A) \cdot P(B)) + (P(C) \cdot P(D) \cdot P(E)) - (P(A) \cdot P(B) \cdot P(C) \cdot P(D) \cdot P(E))$
+$(P(A) \cdot P(B)) + (P(C) \cdot P(D) \cdot P(E)) \setminus (P(A) \cdot P(B) \cdot P(C) \cdot P(D) \cdot P(E))$
 
 Y sean
 
@@ -447,11 +447,11 @@ Que $A$ no funcione, equivale a $A'$.
 
 Entonces, la expresión que nos dará el valor que buscamos es:
 
-$P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))$
+$P(A' | (A \cap B) \cup (C \cap D \cap E) \setminus (A \cap B \cap C \cap D \cap E))$
 
 Esto lo vamos a representar como:
 
-$P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)) = \frac{P(A' \cap ((A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)))}{P((A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))}$
+$P(A' | (A \cap B) \cup (C \cap D \cap E) \setminus (A \cap B \cap C \cap D \cap E)) = \frac{P(A' \cap ((A \cap B) \cup (C \cap D \cap E) \setminus (A \cap B \cap C \cap D \cap E)))}{P((A \cap B) \cup (C \cap D \cap E) \setminus (A \cap B \cap C \cap D \cap E))}$
 
 Ahora, aunque la fórmula parece bastante densa, se simplifica considerando el valor previo que había obtenido para $(A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$, que es $.75112$. Sustituyo:
 
@@ -459,7 +459,9 @@ $P((1 - .7) | (.75112)) = \frac{(1 - .7) \cdot (.75112)}{(.75112)}$
 
 Desarrollando:
 
-$P((.3) | (.75112)) = \frac{(.3) \cdot \color{gray}{(.75112)}}{\color{gray}{(.75112)}} \therefore P((.3) | (.75112)) = (.3)$
+$P((.3) | (.75112)) = \frac{(.3) \cdot \color{gray}{(.75112)}}{\color{gray}{(.75112)}}$
+
+$\therefore P((.3) | (.75112)) = (.3)$. Esto sería la respuesta al inciso *b)*.
 
 *Uso el color gris en la fórmula de arriba para representar un elemento que se está cancelando dadas las limitaciones de la renderización a través de Markdown en GitHub.
 
