@@ -355,7 +355,7 @@ $A_i \cap A_j = \varnothing, \forall i, j = 1, 2, 3, \cdots, k$, $i \neq j$
 
 Se lee un ejercicio:
 
-> **Ejemplo 2.39**:
+> **Ejercicio 2.39**:
 > Un sistema eléctrico consta de cuatro componentes, como se ilustra en la figura 2.9. El sistema funciona si los componentes $A$ y $B$ funcionan, y si funciona cualquiera de los componentes $C$ o $D$. La confiabilidad (probabilidad de que funcionen) de cada uno de los componentes también se muestra en la figura 2.9. Calcule la probabilidad de 
 > a) que el sistema completo funcione y de
 > b) que el componente $C$ no funcione, dado que el sistema completo funciona. Suponga que los cuatro componentes funcionan de manera independiente.
@@ -381,4 +381,13 @@ $P(A \cap B \cap D) + P(A \cap C \cap D) - P(A \cap B \cap C \cap D)$
 $P(A) \cdot P(B) \cdot P(D) + P(A) \cdot P(C) \cdot P(D) - P(A) \cdot P(B) \cdot P(C) \cdot P(D)$
 
 $a \cdot b + a \cdot d - a \cdot e$
+
+Se trabaja el ejercicio 2.93:
+
+> **Ejercicio 2.93**:
+> En la figura 2.11 se muestra un sistema de circuitos. SUponga que los componentes fallan de manera independiente.
+> a) ¿Cuál es la probabilidad de que el sistema complemento funcione?
+> b) Dado que el sistema funciona, ¿cuál es la probabilidad de que el componente $A$ no funcione?
+
+![Figura 2.11: Diagrama para el ejercicio 2.93](assets/img/ejercicio2.93.png)
 
