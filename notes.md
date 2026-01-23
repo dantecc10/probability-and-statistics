@@ -441,7 +441,7 @@ $(.7)^2 + (.8)^3 - (.7)^2 \cdot (.8)^3 = (.49) + (.512) - (.49) \cdot (.512) = (
 
 Por lo tanto, la probabilidad de que el sistema funcione con cualquiera de los dos caminos, es de $(.755112)$. Esto es la respuesta al inciso *a)*.
 
-El inciso dos, nos pide una probabilidad condicional. **Dado que el sistema funciona**, ¿cuál es la probabilidad de que el componente **$A$ no funcione**?
+El inciso *b)*, nos pide una probabilidad condicional. **Dado que el sistema funciona**, ¿cuál es la probabilidad de que el componente **$A$ no funcione**?
 
 Que $A$ no funcione, equivale a $A'$.
 
@@ -452,3 +452,7 @@ $P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))$
 Esto lo vamos a representar como:
 
 $P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)) = \frac{P(A' \cap ((A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)))}{P((A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))}$
+
+Ahora, aunque la fórmula parece bastante densa, se simplifica considerando el valor previo que había obtenido para $(A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$, que es $.75112$. Sustituyo:
+
+P((1 - .7) | (.75112)) = \frac{(1 - .7) \cdot (.75112)}{(.75112)}
