@@ -367,3 +367,18 @@ Por el maestro, no pude copiar algunas ecuaciones, las adjunto a continuación y
 ![No me dejaban ver](assets/img/photo1.jpeg)
 
 ![No me dejaban ver](assets/img/photo2.jpeg)
+
+#### Viernes 23 de enero
+
+Retomamos el ejercicio de la sesión anterior.
+
+Consideramos $P[(A \cap B \cap D) \cup (A \cap C \cap D)]$:
+
+$P(X \cup Y) = P(X) + P(Y) - P(X \cap Y)$
+
+$P(A \cap B \cap D) + P(A \cap C \cap D) - P(A \cap B \cap C \cap D)$
+
+$P(A) \cdot P(B) \cdot P(D) + P(A) \cdot P(C) \cdot P(D) - P(A) \cdot P(B) \cdot P(C) \cdot P(D)$
+
+$a \cdot b + a \cdot d - a \cdot e$
+
