@@ -402,3 +402,20 @@ $P(A) \cdot P(D) \cdot [P(B) + P(C) - P(B) \cdot P(C)]$
 $P(A) \cdot P(D) \cdot [P(B) \cdot (1 - P(C)) + P(C)]$
 
 $P(A) \cdot P(D) \cdot [P(B) \cdot P(C') + P(C)]$
+
+Y ahora, sustituyo las probabilidades establecidas para obtener un valor:
+
+$(x) \cdot (y)$
+
+
+Pues, estaba resolviendo bien, pero con la imagen equivocada. A continuación, el desarrollo para este ejericio, pero tomando como referencia la figura 2.11:
+
+La probabilidad de que el sistem funcione, sería la suma (unión) de las probabilidades de ambos caminos menos la intersección de (para evitar reundancias) de las intersecciones 1 a 1 que se combinarían como $(A \cap B \cap C \cap D \cap E)$.
+
+Queda:
+
+$(A \cap B) + (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$
+
+Esto se puede desarrollar como:
+
+
