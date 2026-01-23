@@ -451,3 +451,4 @@ $P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))$
 
 Esto lo vamos a representar como:
 
+$P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)) = {P(A' \cap ((A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)))}{P((A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))}$
