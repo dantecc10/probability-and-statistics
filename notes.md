@@ -459,4 +459,7 @@ $P((1 - .7) | (.75112)) = \frac{(1 - .7) \cdot (.75112)}{(.75112)}$
 
 Desarrollando:
 
-$P((.3) | (.75112)) = \frac{(.3) \cdot \color{gray}{(.75112)}}{\color{gray}{(.75112)}}$
+$P((.3) | (.75112)) = \frac{(.3) \cdot \color{gray}{(.75112)}}{\color{gray}{(.75112)}} \therefore P((.3) | (.75112)) = (.3)$
+
+*Uso el color gris en la fórmula de arriba para representar un elemento que se está cancelando dadas las limitaciones de la renderización a través de Markdown en GitHub.
+
