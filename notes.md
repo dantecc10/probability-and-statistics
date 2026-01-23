@@ -414,11 +414,11 @@ La probabilidad de que el sistem funcione, sería la suma (unión) de las probab
 
 Queda:
 
-$(A \cap B) + (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$
+$(A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$
 
 Esto se puede desarrollar como:
 
-$(P(A) \cdot P(B)) + (P(C) \cdot P(D) \cdot + P(E)) - (P(A) \cdot P(B) \cdot P(C) \cdot P(D) \cdot P(E))$
+$(P(A) \cdot P(B)) + (P(C) \cdot P(D) \cdot P(E)) - (P(A) \cdot P(B) \cdot P(C) \cdot P(D) \cdot P(E))$
 
 Y sean
 
@@ -439,4 +439,15 @@ Usemos potencias:
 
 $(.7)^2 + (.8)^3 - (.7)^2 \cdot (.8)^3 = (.49) + (.512) - (.49) \cdot (.512) = (1.002) - (.25088) = (.75112)$
 
+Por lo tanto, la probabilidad de que el sistema funcione con cualquiera de los dos caminos, es de $(.755112)$. Esto es la respuesta al inciso *a)*.
+
+El inciso dos, nos pide una probabilidad condicional. **Dado que el sistema funciona**, ¿cuál es la probabilidad de que el componente **$A$ no funcione**?
+
+Que $A$ no funcione, equivale a $A'$.
+
+Entonces, la expresión que nos dará el valor que buscamos es:
+
+$P(A' | (A \cap B) \cup (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E))$
+
+Esto lo vamos a representar como:
 
