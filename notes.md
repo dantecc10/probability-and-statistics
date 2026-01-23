@@ -418,4 +418,23 @@ $(A \cap B) + (C \cap D \cap E) - (A \cap B \cap C \cap D \cap E)$
 
 Esto se puede desarrollar como:
 
+$(P(A) \cdot P(B)) + (P(C) \cdot P(D) \cdot + P(E)) - (P(A) \cdot P(B) \cdot P(C) \cdot P(D) \cdot P(E))$
 
+Y sean
+
+$P(A) = .7$
+
+$P(B) = .7$
+
+$P(C) = .8$
+
+$P(D) = .8$
+
+$P(E) = .8$
+
+sustituyo:
+$(.7) \cdot (.7) + (.8) \cdot (.8) \cdot (.8) - (.7) \cdot (.7) \cdot (.8) \cdot (.8) \cdot (.8)$
+
+Usemos potencias:
+
+$(.7)^2 + (.8)^3 - (.7)^2 \cdot (.8)^3$
