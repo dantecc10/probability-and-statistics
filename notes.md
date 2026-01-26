@@ -468,4 +468,8 @@ $\therefore P((.3) | (.75112)) = (.3)$. Esto sería la respuesta al inciso *b)*.
 Ahora, debo resolver el **_Ejercicio 2.94_**. Este se responde con mucha facilidad partiendo de la solución del inciso _a)_ del **_Ejercicio 2.93_**, pero lo pospondré para el fin de semana.
 
 > **Ejercicio 2.94**:
->
+> En la situación del **_ejercicio 2.93_** se sabe que el sistema no funciona. ¿Cuál es la probabilidad de que el componente A tampoco funcione?
+
+Para resolver, debemos plantear una expresión acorde a la pregunta:
+
+
