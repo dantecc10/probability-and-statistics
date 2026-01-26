@@ -465,5 +465,7 @@ $\therefore P((.3) | (.75112)) = (.3)$. Esto sería la respuesta al inciso *b)*.
 
 *Uso el color gris en la fórmula de arriba para representar un elemento que se está cancelando dadas las limitaciones de la renderización a través de Markdown en GitHub.
 
-Ahora, debo resolver el **_Ejercicio 2.94_**. Este se responde con mucha facilidad partiendo de la solución del inciso _a)_ del **_Ejercicio_ 2.93_**, pero lo pospondré para el fin de semana.
+Ahora, debo resolver el **_Ejercicio 2.94_**. Este se responde con mucha facilidad partiendo de la solución del inciso _a)_ del **_Ejercicio 2.93_**, pero lo pospondré para el fin de semana.
 
+> **Ejercicio 2.94**:
+>
