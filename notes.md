@@ -467,17 +467,17 @@ $\therefore P((.3) | (.75112)) = (.3)$. Esto sería la respuesta al inciso *b)*.
 
 Ahora, debo resolver el **_Ejercicio 2.94_**. Este se responde con mucha facilidad partiendo de la solución del inciso _a)_ del **_Ejercicio 2.93_**, pero lo pospondré para el fin de semana.
 
-> **Ejercicio 2.94**:
+**Ejercicio 2.94**:
 > En la situación del **_ejercicio 2.93_** se sabe que el sistema no funciona. ¿Cuál es la probabilidad de que el componente A tampoco funcione?
 
 Para resolver, debemos plantear una expresión acorde a la pregunta:
 
 #### Ejercicios de tarea
 
-> **Ejercicio 2.2**:
+**Ejercicio 2.2**:
 > Utilice el método de la regla para describir el espacio muestral $S$, que consta de todos los puntos del primer cuadrante dentro de un círculo de radio 3 con centro en el origen.
 
-> **Ejercicio 2.3**:
+**Ejercicio 2.3**:
 > ¿Cuáles de los siguientes eventos son iguales?
 >
 > a) $A = \\{1, 3\\}$;
@@ -488,23 +488,23 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 >
 > d) $D = \\{x | x$ es el número de caras cuando se lanzan seis monedas al aire $\\}$.
 
-> **Ejercicio 2.4**:
+**Ejercicio 2.4**:
 > Un experimento implica lanzar un par de dados, uno verde y uno rojo, y al registrar los números que resultan. Si $x$ es igual al resultado en el dado verde y $y$ es el resultado en el dado rojo, describa el espacio muestral $S$
 >
 > a) mediante la lista de los elementos $(x, y)$;
 >
 > b) por medio del método de la regla.
 
-> **Ejercicio 2.5**:
+**Ejercicio 2.5**:
 > Un experimento consiste en lanzar un dadod y después lanzar una moneda una vez si el número en el dado es par. Si el número en el dado es impar, la moneda se lanza dos veces. Use la notación $4H$, por ejemplo, para denotar el resultado de que el dado muestre 4 y después la moneda caiga en cara, y $3HT$ para denotar el resultado de que el dado muestre 3, seguido por una cara y después una cruz en la moneda; construya un diagrama de árbol para mostrar los 18 elementos del espacio muestral $S$.
 
-> **Ejercicio 2.6**: 
+**Ejercicio 2.6**: 
 > De un grupo de cuatro suplentes se seleccionan dos jurados para servir en un juicio por homicidio. Utilice la notación $A_1 A_3$, por ejemplo, para denotar el evento simple de que se seleccionen los suplentes 1 y 3, liste los 6 elementos del espacio muestral $S$.
 
-> **Ejercicio 2.7**:
+**Ejercicio 2.7**:
 > De un grupo de estudiantes de química se seleccionan cuatro al azar y se clasifican como hombre o mujer. Liste los elementos del espacio muestral $S_1$ usando la letra $H$ para hombre y $M$ para mujer. Defina un segundo espacio muestral $S_2$ donde los elementos representen el número de mujeres seleccionadas.
 
-> **Ejercicio 2.8**:
+**Ejercicio 2.8**:
 > Para el espacio muestral del *ejercicio 2.4*,
 >
 > a) liste los elementos que corresponden al evento $A$ de que la suma sea mayor que 8;
@@ -521,7 +521,7 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 > 
 > g) construya un diagrama de Venn para ilustrar las intersecciones y uniones de los eventos $A$, $B$ y $C$.
 
-> **Ejercicio 2.9**:
+**Ejercicio 2.9**:
 > Para el espacio muestral del ejercicio 2.5,
 >
 > a) liste los elementos que corresponden al evento $A$ en el que el dado salga un número menor que 3;
@@ -534,7 +534,7 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 >
 > e) liste los elementos que corresponden al evento $A \cup B$.
 
-> **Ejercicio 2.10**:
+**Ejercicio 2.10**:
 > Se contrata a una empresa de ingenieros para que determine si ciertas vías fluviales en Virginia, Estaods Unidos, son seguras para la pesca. Se toman muestras de tres ríos.
 >
 > a) Liste los elementos de un espacio muestral $S$ y utilice las letras $P$ para "seguro para la pesca" y $N$ para "inseguro para la pesca".
@@ -542,3 +542,4 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 > b) Liste los elementos de $S$ que correspondan al evento $E$ de que al menos dos de los ríos son seguros para la pesca.
 >
 > c) Defina un evento que tiene como elementos a los puntos $\\{PPP, NPP, PPN, NPNP\\}$
+
