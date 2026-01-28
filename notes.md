@@ -503,13 +503,14 @@ $S = \\{(x, y) | x^2 + y^2 < 9, x > 0, y > 0\\}$.
 
 _Solución_:
 
-$S = \\{(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6),
+$$
+S = \\{(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6),
 	(2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6),
 	(3, 1), (3, 2), (3, 3), (3, 4), (3, 5), (3, 6),
 	(4, 1), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6),
 	(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6),
 	(6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)
- \\}$
+ \\}$$
 
 **Ejercicio 2.5**:
 > Un experimento consiste en lanzar un dadod y después lanzar una moneda una vez si el número en el dado es par. Si el número en el dado es impar, la moneda se lanza dos veces. Use la notación $4H$, por ejemplo, para denotar el resultado de que el dado muestre 4 y después la moneda caiga en cara, y $3HT$ para denotar el resultado de que el dado muestre 3, seguido por una cara y después una cruz en la moneda; construya un diagrama de árbol para mostrar los 18 elementos del espacio muestral $S$.
