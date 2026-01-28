@@ -486,4 +486,4 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 >
 > c) $C = \\{x | x^2 - 4x + 3 = 0\\}$;
 >
-> d) $D = \\{x | x$ es el número de caras cuando se lanzan seis monedas al aire$\\}$.
+> d) $D = \\{x | x$ es el número de caras cuando se lanzan seis monedas al aire $\\}$.
