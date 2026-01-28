@@ -472,4 +472,14 @@ Ahora, debo resolver el **_Ejercicio 2.94_**. Este se responde con mucha facilid
 
 Para resolver, debemos plantear una expresión acorde a la pregunta:
 
+#### Ejercicios de tarea
 
+> **Ejercicio 2.2**:
+> Utilice el método de la regla para describir el espacio muestral $S$, que consta de todos los puntos del primer cuadrante dentro de un círculo de radio 3 con centro en el origen.
+
+> **Ejercicio 2.3**:
+> ¿Cuáles de los siguientes eventos son iguales?
+> a) $A = {1, 3}$;
+> b) $B = {x | x es un número de un dado}$;
+> c) $C = {x | x^2 - 4x + 3 = 0}$;
+> d) $D = {x | x es el número de caras cuando se lanzan seis monedas al aire}.
