@@ -477,6 +477,12 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 **Ejercicio 2.2**:
 > Utilice el método de la regla para describir el espacio muestral $S$, que consta de todos los puntos del primer cuadrante dentro de un círculo de radio 3 con centro en el origen.
 
+_Solución_:
+
+Con el _método de la regla_ definimos el conjunto solución usando expresiones matemáticas que deben cumplir los puntos $(x, y)$. Un círculo con centro en el origne y radio 3 tiene la ecuación $x^2 + y^2 = 3^2$. Ser solución implica la desigualdad $\leq 9$, y el primer cuadrante implica que tanto $x$, como $y$ son positivos ($\geq 0$).
+
+$S = \\$.
+
 **Ejercicio 2.3**:
 > ¿Cuáles de los siguientes eventos son iguales?
 >
