@@ -538,6 +538,53 @@ S = \\{(1, 1), (1, 2), (1, 3), (1, 4), (1, 5), (1, 6),
 > 
 > g) construya un diagrama de Venn para ilustrar las intersecciones y uniones de los eventos $A$, $B$ y $C$.
 
+_Solución_:
+
+a) Son los elementos:
+
+$A = \\{(3, 6), (4, 5), (4, 6), (5, 4), (5, 5), (5, 6), (6, 3), (6, 4), (6, 5), (6, 6)  \\}$
+
+b) Serían los elementos:
+
+$B = \\{ (1, 2), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (3, 2), (4, 2), (5, 2), (6, 2) \}}$
+
+c) Serían los elementos:
+
+$C = \\{(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6) \\}$
+
+d) Serían:
+
+$A \cap C = \\{ (5, 4), (5, 5), (5, 6), (6, 3), (6, 4), (6, 5), (6, 6) \\}$
+
+e) Serían:
+
+$A \cap B = \\{ \varnothing \\}$
+
+f) Son:
+
+$B \cap C = \\{ (5, 2), (6, 2) \\}$
+
+g) Construir un diagrama de Venn es imposible usando sólo markdown. Dejo pendiente esta solución hasta encontrar la forma de generarlos a través de una librería e insertarlos como imagen según corresponde.
+
+Aún así puedo escribir las intersecciones basándome en las respuestas a los demás incisos:
+
+$A = \\{(3, 6), (4, 5), (4, 6), (5, 4), (5, 5), (5, 6), (6, 3), (6, 4), (6, 5), (6, 6)  \\}$
+
+$B = \\{ (1, 2), (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 6), (3, 2), (4, 2), (5, 2), (6, 2) \}}$
+
+$C = \\{(5, 1), (5, 2), (5, 3), (5, 4), (5, 5), (5, 6), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6) \\}$
+
+$A \cap B = \\{ \varnothing \\}$
+
+$A \cap C = \\{ (5, 4), (5, 5), (5, 6), (6, 3), (6, 4), (6, 5), (6, 6) \\}$
+
+$B \cap C = \\{ (5, 2), (6, 2) \\}$
+
+Falta $A \cap B \cap C$:
+
+$A \cap B \cap C = \\{ \varnothing \\}$
+
+
 **Ejercicio 2.9**:
 > Para el espacio muestral del ejercicio 2.5,
 >
