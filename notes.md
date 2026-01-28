@@ -479,7 +479,11 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 
 > **Ejercicio 2.3**:
 > ¿Cuáles de los siguientes eventos son iguales?
+>
 > a) $A = {1, 3}$;
+>
 > b) $B = {x | x es un número de un dado}$;
+>
 > c) $C = {x | x^2 - 4x + 3 = 0}$;
-> d) $D = {x | x es el número de caras cuando se lanzan seis monedas al aire}.
+>
+> d) $D = {x | x es el número de caras cuando se lanzan seis monedas al aire}$.
