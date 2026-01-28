@@ -487,3 +487,58 @@ Para resolver, debemos plantear una expresión acorde a la pregunta:
 > c) $C = \\{x | x^2 - 4x + 3 = 0\\}$;
 >
 > d) $D = \\{x | x$ es el número de caras cuando se lanzan seis monedas al aire $\\}$.
+
+> **Ejercicio 2.4**:
+> Un experimento implica lanzar un par de dados, uno verde y uno rojo, y al registrar los números que resultan. Si $x$ es igual al resultado en el dado verde y $y$ es el resultado en el dado rojo, describa el espacio muestral $S$
+>
+> a) mediante la lista de los elementos $(x, y)$;
+>
+> b) por medio del método de la regla.
+
+> **Ejercicio 2.5**:
+> Un experimento consiste en lanzar un dadod y después lanzar una moneda una vez si el número en el dado es par. Si el número en el dado es impar, la moneda se lanza dos veces. Use la notación $4H$, por ejemplo, para denotar el resultado de que el dado muestre 4 y después la moneda caiga en cara, y $3HT$ para denotar el resultado de que el dado muestre 3, seguido por una cara y después una cruz en la moneda; construya un diagrama de árbol para mostrar los 18 elementos del espacio muestral $S$.
+
+> **Ejercicio 2.6**: 
+> De un grupo de cuatro suplentes se seleccionan dos jurados para servir en un juicio por homicidio. Utilice la notación $A_1 A_3$, por ejemplo, para denotar el evento simple de que se seleccionen los suplentes 1 y 3, liste los 6 elementos del espacio muestral $S$.
+
+> **Ejercicio 2.7**:
+> De un grupo de estudiantes de química se seleccionan cuatro al azar y se clasifican como hombre o mujer. Liste los elementos del espacio muestral $S_1$ usando la letra $H$ para hombre y $M$ para mujer. Defina un segundo espacio muestral $S_2$ donde los elementos representen el número de mujeres seleccionadas.
+
+> **Ejercicio 2.8**:
+> Para el espacio muestral del *ejercicio 2.4*,
+>
+> a) liste los elementos que corresponden al evento $A$ de que la suma sea mayor que 8;
+>
+> b) liste los elementos que corresponden al evento $B$ de que ocurra un 2 en cualquiera de los dos dados;
+>
+> c) liste los elementos que corresponden al evento $C$ de que salga un número mayor que 4 en el dado verde;
+> 
+> d) liste los elementos que corresponden al evento $A \cap C$;
+>
+> e) liste los elementos que corresponden al evento $A \cap B$;
+>
+> f) liste los elementos que corresponden al evento $B \cap C$;
+> 
+> g) construya un diagrama de Venn para ilustrar las intersecciones y uniones de los eventos $A$, $B$ y $C$.
+
+> **Ejercicio 2.9**:
+> Para el espacio muestral del ejercicio 2.5,
+>
+> a) liste los elementos que corresponden al evento $A$ en el que el dado salga un número menor que 3;
+>
+> b) liste los elementos que corresponden al evento $B$ de que resulten 2 cruces;
+> 
+> c) liste los elementos que corresponden al evento $A'$;
+>
+> d) liste los elementos que corresponden al evento $A' \cap B$;
+>
+> e) liste los elementos que corresponden al evento $A \cup B$.
+
+> **Ejercicio 2.10**:
+> Se contrata a una empresa de ingenieros para que determine si ciertas vías fluviales en Virginia, Estaods Unidos, son seguras para la pesca. Se toman muestras de tres ríos.
+>
+> a) Liste los elementos de un espacio muestral $S$ y utilice las letras $P$ para "seguro para la pesca" y $N$ para "inseguro para la pesca".
+>
+> b) Liste los elementos de $S$ que correspondan al evento $E$ de que al menos dos de los ríos son seguros para la pesca.
+>
+> c) Defina un evento que tiene como elementos a los puntos $\\{PPP, NPP, PPN, NPNP\\}$
