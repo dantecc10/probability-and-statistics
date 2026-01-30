@@ -113,3 +113,12 @@ $S_L = \\{L \\}$
 $S_D = \\{D, D \\}$
 
 
+#### Pregunta 14
+
+El espacio no es equiprobable porque hay letras que aparecen más que otras.
+
+Oh, bueno, esto terminó siendo la explicación de la pregunta siguiente, je, je.
+
+#### Pregunta 15.
+
+Lo que ya dije.
