@@ -32,7 +32,7 @@ Recordamos que:
 
 Números pares presentes en el dado ($S_Pares$):
 
-$S_Pares = \\{2, 4, 6 \}}$
+$S_Pares = \\{2, 4, 6 \\}$
 
 Números primos presentes en el dado ($S_Primos$):
 
