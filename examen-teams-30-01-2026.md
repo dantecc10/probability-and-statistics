@@ -84,5 +84,32 @@ Sea la equivalencia $P(A | B) = \frac{A \cdot B}{B}$.
 
 Sustituyo:
 
-$P(S_M|S_F') = \frac{S_M \cdot S_F'}{S_F'} = \frac{.8 \cdot .3}{.3}$
-$P(S_F|S_M') = \frac{S_F \cdot S_M'}{S_M'} = \frac{.7 \cdot }{}$
+$P(S_M|S_F') = \frac{S_M \cdot S_F'}{S_F'} = \frac{.8 \cdot .3}{.3} = \frac{.24}{.3}$
+
+$P(S_F|S_M') = \frac{S_F \cdot S_M'}{S_M'} = \frac{.7 \cdot .2}{.2} = \frac{.14}{.2}$
+
+Falta aplicar una suma.
+
+#### Pregunta 13
+
+Sea el espacio muestral:
+
+$S = \\{(P), (R), (O), (B), (A), (B), (I), (L), (I), (D), (A), (D) \\}$
+
+$S_P = \\{P \\}$
+
+$S_R = \\{R \\}$
+
+$S_O = \\{O \\}$
+
+$S_B = \\{B, B \\}$
+
+$S_A = \\{A, A \\}$
+
+$S_I = \\{I, I \\}$
+
+$S_L = \\{L \\}$
+
+$S_D = \\{D, D \\}$
+
+
