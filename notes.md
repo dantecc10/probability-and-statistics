@@ -607,3 +607,55 @@ $A \cap B \cap C = \\{ \varnothing \\}$
 >
 > c) Defina un evento que tiene como elementos a los puntos $\\{PPP, NPP, PPN, NPNP\\}$
 
+### Miércoles 4 de febrero
+
+**Ejercicio 2.21**:
+
+> A los participantes de una convención se les ofrecen seis recorridos, cada uno de tres días, a sitios de interés. ¿De cuántas maneras se puede acomodar una persona para que vaya a uno de los recorridos planeados por la convención?
+
+De 6, porque es a una persona:
+
+**Ejercicio 2.22**:
+
+> "En un estudio médico los pacientes se clasifican en 8 formas de acuerdo con su tipo sanguíneo: $AB^+$, $AB^-$, $A^+$, $B^+$, $B^-$, $O^+$ u $O^-$; y también de acuerdo con su presión sanguínea: baja, nomral, o alta. Encuentre el número de formas en las que se puede clasificar a un paciente".
+
+La respuesta es 24: $8$ tipos de sangre por $3$ posibles niveles de presión.
+
+**Ejercicio 2.23**:
+
+> "Si un experimento consiste en lanzar un dado y después extraer una letra al azar del alfabeto inglés, ¿cuántos puntos habŕa en el espacio muestral?"
+
+La respuesta es 162 (para el alfabeto español): $6$ lados del dado por $27$ posibles letras.
+
+**Ejercicio 2.24**:
+
+> "Los estudiantes de humanidades de una universidad privada se clasifican como estudiantes de primer año, de segundo año, de penúltimo año o de último año, y también de acuerdo con su género (hombres o mujeres). Calcule el número total de clasificaciones posibles para los estudiantes de esa universidad."
+
+$4 \cdot 6 = 24$
+
+**Ejercicio 2.26**:
+
+> "Un estudio en California concluyó que siguiendo siete snecillas reglas para la salud un hombre y una mujer puede prolongar su vida 11 y 7 años en promedio, respectivamente. Estas 7 reglas son: no fumar, hacer ejercicio de manera habitual, moderar su consumo de alcohol, dormir siete u ocho horas, mantener el peso"
+
+**Ejercicio 2.27**:
+
+> "Un urbanista de un nuevo fraccionamiento ofrece a un posible comprador de una casa elehir entre 4 diseños, 3 diferentes sistemas de calefacción, un garaje o cobertizo, y un patio o un porche cubierto. ¿De cuántos planos diferentes dispone el comprador?"
+
+Los planos de los que dispone el comprador son $48$,
+
+$4 \cdot 3 \cdot 2 \cdot 2$; lo que corresponde a
+
+- 4 diseños
+- 3 diferentes sistemas de calefacción
+- un garaje o cobertizo (2 opciones)
+- y un patio o porche cubierto (otras 2 opciones)
+ 
+**Ejercicio 2.42**:
+
+> "De un grupo de 40 boletos se sacan 3 billetes de lotería para el primero, segundo y tercer premios. Encuentre el número de puntos muestrales en $S$ para dar los 3 premios, si cada concursante sólo tiene un billete".
+
+Los puntos muestrales en $S$ para sacar los boletos premiados son $40 \cdot 39 \cdot 38 = 59280$, puesto que
+
+- es equiprobable sacar cualquier boleto para el primer lugar;
+- para luego sacar el segundo descartando el que haya salido en la primera, y
+- luego sacar el tercero habiendo descartado ya dos boletos de la totalidad de estos.
