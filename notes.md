@@ -684,3 +684,80 @@ Hsata aquí, creo que está mal....
 
 
 En lenguaje natural, planteo que una solución es "las primeras 60 multiplicaciones" del factorial de 365. Porque esto generaría fechas no repetidas. Sobrarían elementos dentro de los días del año, pero evidentemente 60 personas no pueden cubrir un calendario de 365 días, lo cual es una señal de que se va en buen sentido.
+
+Creo que el planteamiento del problema podría ser reformulado a:
+
+> _"¿Cuantas formas posibles hay de **asignar** una fecha de cumpleaños distinta a cada uno de los 60 estudiantes de un grupo? Considerando que *asignar* una fecha de cumpleaños no es posible, pero permite cumplir con la condición de que no se repita ningún cumpleaños."_
+
+Yo plantearía una solución práctica, siguiendo con mi idea de _"las primeras multiplicaciones de un factorial de 365"_:
+
+> _"Si tengo anotados en 365 papelitos los 365 días del año, y los reparto a un grupo de 60 estudiantes, pasando a sus lugares, y teniendo los papeles al azar u ordenados (para esta condición no importa). Todos tendrán un día del año"._
+
+De esto podemos saber que:
+- Los papeles serán diferentes
+- Por lo anterior, se cumple que *"dos estudiantes no tengan la misma fecha de cumpleaños en un grupo de 60"*.
+
+Matemáticamente, las posibilidades de asignar a cada uno un día, serían:
+| Estudiante  | Posibles días de cumpleaños |
+| :-: | :-: |
+| 60 | 365 |
+| 59 | 364 |
+| 58 | 363 |
+| 57 | 362 |
+| 56 | 361 |
+| 55 | 360 |
+| 54 | 359 |
+| 53 | 358 |
+| 52 | 357 |
+| 51 | 356 |
+| 50 | 355 |
+| 49 | 354 |
+| 48 | 353 |
+| 47 | 352 |
+| 46 | 351 |
+| 45 | 350 |
+| 44 | 349 |
+| 43 | 348 |
+| 42 | 347 |
+| 41 | 346 |
+| 40 | 345 |
+| 39 | 344 |
+| 38 | 343 |
+| 37 | 342 |
+| 36 | 341 |
+| 35 | 340 |
+| 34 | 339 |
+| 33 | 338 |
+| 32 | 337 |
+| 31 | 336 |
+| 30 | 335 |
+| 29 | 334 |
+| 28 | 333 |
+| 27 | 332 |
+| 26 | 331 |
+| 25 | 330 |
+| 24 | 329 |
+| 23 | 328 |
+| 22 | 327 |
+| 21 | 326 |
+| 20 | 325 |
+| 19 | 324 |
+| 18 | 323 |
+| 17 | 322 |
+| 16 | 321 |
+| 15 | 320 |
+| 14 | 319 |
+| 13 | 318 |
+| 12 | 317 |
+| 11 | 316 |
+| 10 | 315 |
+| 9 | 314 |
+| 8 | 313 |
+| 7 | 312 |
+| 6 | 311 |
+| 5 | 310 |
+| 4 | 309 |
+| 3 | 308 |
+| 2 | 307 |
+| 1 | 306 |
+
