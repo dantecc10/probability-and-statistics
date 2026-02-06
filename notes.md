@@ -683,3 +683,4 @@ $(365-(305))! = (365-305) = 60!$
 Hsata aquí, creo que está mal....
 
 
+En lenguaje natural, planteo que una solución es "las primeras 60 multiplicaciones" del factorial de 365. Porque esto generaría fechas no repetidas. Sobrarían elementos dentro de los días del año, pero evidentemente 60 personas no pueden cubrir un calendario de 365 días, lo cual es una señal de que se va en buen sentido.
