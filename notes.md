@@ -667,3 +667,9 @@ Nos pidieron resolver el problema:
 **Ejercicio 2.48**:
 
 > _"¿Cuántas formas hay en que dos estudiantes no tengan la misma fecha de cumpleaños en un grupo de 60?"_
+
+Empezaré planteando que hay 365 -considerando un año no bisiesto- posibles cumpleaños para cada persona.
+
+Y que hay 60 personas.
+
+Por ello, la posibilidad de que una persona cumpla en un día aleatorio o determinado del año es de $365 \cdot 60$. 
