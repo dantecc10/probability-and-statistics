@@ -639,7 +639,7 @@ $4 \cdot 6 = 24$
 
 **Ejercicio 2.27**:
 
-> "Un urbanista de un nuevo fraccionamiento ofrece a un posible comprador de una casa elehir entre 4 diseños, 3 diferentes sistemas de calefacción, un garaje o cobertizo, y un patio o un porche cubierto. ¿De cuántos planos diferentes dispone el comprador?"
+> "Un urbanista de un nuevo fraccionamiento ofrece a un posible comprador de una casa elegir entre 4 diseños, 3 diferentes sistemas de calefacción, un garaje o cobertizo, y un patio o un porche cubierto. ¿De cuántos planos diferentes dispone el comprador?"
 
 Los planos de los que dispone el comprador son $48$,
 
