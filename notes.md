@@ -768,3 +768,5 @@ Formas posibles de no repetir fecha de cumpleaños: $(365 \cdot 364 \cdot 363 \c
 $= 32118000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000$ posibilidades
 
 O, mejor expresado: $3.12118 \cdot 10^{151}$
+
+Se queda de tarea el ejercicio 2.48, el principio del palomar, y principios de inclusión y exclusión.
