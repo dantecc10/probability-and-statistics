@@ -659,3 +659,11 @@ Los puntos muestrales en $S$ para sacar los boletos premiados son $40 \cdot 39 \
 - es equiprobable sacar cualquier boleto para el primer lugar;
 - para luego sacar el segundo descartando el que haya salido en la primera, y
 - luego sacar el tercero habiendo descartado ya dos boletos de la totalidad de estos.
+
+### Viernes 6 de febrero
+
+Nos pidieron resolver el problema:
+
+**Ejercicio 2.48**:
+
+> _"¿Cuántas formas hay en que dos estudiantes no tengan la misma fecha de cumpleaños en un grupo de 60?"_
