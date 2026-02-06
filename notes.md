@@ -763,5 +763,6 @@ Matemáticamente, las posibilidades de asignar a cada uno un día, serían:
 
 La cantidad de formas posibles para que nadie repita fecha de cumpleaños sería:
 
-Formas posibles de no repetir fecha de cumpleaños: $(365 \cdot 364 \cdot 363 \cdot 362 \cdot 361 \cdot 360 \cdot 359 \cdot 358 \cdot 357 \cdot 356 \cdot 355 \cdot 354 \cdot 353 \cdot 352 \cdot 351 \cdot 350 \cdot 349 \cdot 348 \cdot 347 \cdot 346 \cdot 345 \cdot 344 \cdot 343 \cdot 342 \cdot 341 \cdot 340 \cdot 339 \cdot 338 \cdot 337 \cdot 336 \cdot 335 \cdot 334 \cdot 333 \cdot 332 \cdot 331 \cdot 330 \cdot 329 \cdot 328 \cdot 327 \cdot 326 \cdot 325 \cdot 324 \cdot 323 \cdot 322 \cdot 321 \cdot 320 \cdot 319 \cdot 318 \cdot 317 \cdot 316 \cdot 315 \cdot 314 \cdot 313 \cdot 312 \cdot 311 \cdot 310 \cdot 309 \cdot 308 \cdot 307 \cdot 306 
-)$
+Formas posibles de no repetir fecha de cumpleaños: $(365 \cdot 364 \cdot 363 \cdot 362 \cdot 361 \cdot 360 \cdot 359 \cdot 358 \cdot 357 \cdot 356 \cdot 355 \cdot 354 \cdot 353 \cdot 352 \cdot 351 \cdot 350 \cdot 349 \cdot 348 \cdot 347 \cdot 346 \cdot 345 \cdot 344 \cdot 343 \cdot 342 \cdot 341 \cdot 340 \cdot 339 \cdot 338 \cdot 337 \cdot 336 \cdot 335 \cdot 334 \cdot 333 \cdot 332 \cdot 331 \cdot 330 \cdot 329 \cdot 328 \cdot 327 \cdot 326 \cdot 325 \cdot 324 \cdot 323 \cdot 322 \cdot 321 \cdot 320 \cdot 319 \cdot 318 \cdot 317 \cdot 316 \cdot 315 \cdot 314 \cdot 313 \cdot 312 \cdot 311 \cdot 310 \cdot 309 \cdot 308 \cdot 307 \cdot 306)$
+
+$= 32118000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000$ posibilidades
