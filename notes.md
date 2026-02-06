@@ -673,3 +673,13 @@ Empezaré planteando que hay 365 -considerando un año no bisiesto- posibles cum
 Y que hay 60 personas.
 
 Por ello, la posibilidad de que una persona cumpla en un día aleatorio o determinado del año es de $365 \cdot 60$. 
+
+Si $365!$ nos permite determinar la cantidad de acomodos de fechas del año sin repetición, pero sólo queremos 60, la expresión sería:
+
+$(365-(365-60))!$
+
+$(365-(305))! = (365-305) = 60!$
+
+Hsata aquí, creo que está mal....
+
+
