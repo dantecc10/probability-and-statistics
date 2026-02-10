@@ -770,3 +770,7 @@ $= 32118000000000000000000000000000000000000000000000000000000000000000000000000
 O, mejor expresado: $3.12118 \cdot 10^{151}$
 
 Se queda de tarea el ejercicio 2.48, el principio del palomar, y principios de inclusión y exclusión.
+
+#### Otra nota
+
+$x = y^2$
