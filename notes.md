@@ -792,3 +792,12 @@ En el caso discreto:
 Si queremos obtener una función de la función conjunta para la variable aleatoria $x$ debemos hacer la sumatoria a modo de que quede libre sólo la variable $x$. Algo como:
 
 $\sum_{x} f(x, y)$
+
+
+Para el caso continuo:
+
+$g(x) = \int_{-a}^{a} f(x, y)dy$
+
+y 
+
+$h(y) = \int_{- \infty}^{\infty} f(x, y)dx$
