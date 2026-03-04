@@ -821,3 +821,21 @@ y = 1, 2, 3
 \end{cases}
 $$
 
+$a < c$
+
+$\sum_{y=1}^{a} \sum_{x=1}^{a} xy$
+
+
+Problema **3.38**:
+
+> "Si la distribución de probabilidad conjunta de X y Y está dada por
+>
+> $f(x, y) = \frac{x+y}{30}$, para $x = 0, 1, 2, 3$; $y = 0, 1, 2$, calcule
+>
+> a) $P(X \leq 2, Y = 1)$;
+>
+> b) $P(X > 2, Y \leq 1)$;
+>
+> c) $P(X > Y)$;
+>
+> d) $P(X + Y = 4)$
