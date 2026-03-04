@@ -774,3 +774,21 @@ Se queda de tarea el ejercicio 2.48, el principio del palomar, y principios de i
 #### Otra nota
 
 $x = y^2$
+
+### Miércoles 4 de marzo
+
+Suponemos que tenemos lista nuestra función de distribución conjunta:
+
+$f(x, y)$
+
+Y nos piden determinar a partir de esta dos funciones $g(x)$ y $h(y)$ y se puedan obtener las funciones de probabilidad para cada una de las variables aleatorias.
+
+Hay que encontrar las _**distribuciones marginales**_.
+
+Si ambas son discretas o ambas son continuas es posible realizar un cálculo.
+
+En el caso discreto:
+
+Si queremos obtener una función de la función conjunta para la variable aleatoria $x$ debemos hacer la sumatoria a modo de que quede libre sólo la variable $x$. Algo como:
+
+$\sum_{x} f(x, y)$
