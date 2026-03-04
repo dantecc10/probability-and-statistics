@@ -801,3 +801,23 @@ $g(x) = \int_{-a}^{a} f(x, y)dy$
 y 
 
 $h(y) = \int_{- \infty}^{\infty} f(x, y)dx$
+
+$x$, $y$ con distrubución conjunta:
+
+$P(X|Y) = \frac{f(x,y)}{h(y)}$
+
+$x$, $y$ son independientes **sí y sólo sí**:
+
+$f(x, y) = g(x) \cdot h(y)$
+
+Se resuelve un problema:
+
+a. $f(x, y) = cxy$
+
+$$
+\begin{cases}
+x = 1, 2, 3 \\
+y = 1, 2, 3
+\end{cases}
+$$
+
