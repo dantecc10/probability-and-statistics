@@ -855,4 +855,4 @@ $\sum_{x} x \cdot f(X)$
 
 ó
 
-$\int{-\infty}^{\infty} x \cdot f(x) dx$
+$\int_{-\infty}^{\infty} x \cdot f(x) dx$
