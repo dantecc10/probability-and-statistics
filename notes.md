@@ -838,4 +838,21 @@ Problema **3.38**:
 >
 > c) $P(X > Y)$;
 >
-> d) $P(X + Y = 4)$
+> d) $P(X + Y = 4)$"
+
+
+$\sum_{x=0}^{2} f(x, 1) = \sum_{x=0}^{2}(\frac{x+1}{30})$
+
+### Miércoles 11 de marzo
+
+Hablamos de valores esperados: ¿habrá alguna relación con las estadísticas del fútbol?
+
+Si tenemos una variable aleatoria y queremos definir el valor esperado de la variable aleatoria, hablamos de distribución o de densidad según la función sea discreta o continua.
+
+Usamos una sumatoria: el valor de la variable por la probabilidad de la variable.
+
+$\sum_{x} x \cdot f(X)$
+
+ó
+
+$\int{-\infty}^{\infty} x \cdot f(x) dx$
