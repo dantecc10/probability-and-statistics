@@ -860,3 +860,5 @@ $\int_{-\infty}^{\infty} x \cdot f(x) dx$
 $\mu = E(X) = $\sum_{x} x \cdot f(X)$
 
 $\mu = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) dx$
+
+Nota: La función de una variable aleatoria, devuelve una variable aleatoria.
