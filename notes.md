@@ -856,3 +856,7 @@ $\sum_{x} x \cdot f(X)$
 ó
 
 $\int_{-\infty}^{\infty} x \cdot f(x) dx$
+
+$\mu = E(X) = $\sum_{x} x \cdot f(X)$
+
+$\mu = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) dx$
