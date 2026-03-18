@@ -880,3 +880,7 @@ $\frac{1}{2}^{2} [1 + 2 \cdot \binom{6}{2} + 3 \cdot \binom{6}{3} + 4 \cdot \bin
 $E(c) = \int_{- \infty}^{\infty} c \cdot f(x)dx$
 
 $E(g(x)) = \int_{- \infty}^{\infty} g(x) \cdot f(x)dx$
+
+Esto fue para el caso continuo; para el discreto sería:
+
+$E(aX) = \sum_{x} (a \cdot x \ cdot f(x))$
