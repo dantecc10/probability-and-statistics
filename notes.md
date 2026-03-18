@@ -886,3 +886,5 @@ Esto fue para el caso continuo; para el discreto sería:
 $E(aX) = \sum_{x} (a \cdot x \cdot f(x))$
 
 $E(aX) = a \cdot \sum_{x} (x \cdot f(x))$
+
+$E(aX) = a \cdot E(x)$
