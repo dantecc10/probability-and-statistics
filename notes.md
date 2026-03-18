@@ -889,8 +889,22 @@ $E(aX) = a \cdot \sum_{x} (x \cdot f(x))$
 
 $E(aX) = a \cdot E(x)$
 
-$E(g(x) + h(x)) = \sum_{x} (g(x) \cdot + h(x)) \cdot f(x))$
+$E(g(x) + h(x)) = \sum_{x} (g(x) \cdot h(x)) \cdot f(x))$
 
 $E(g(x) + h(x)) = \sum_{x} (g(x) \cdot f(x) + h(x) \cdot f(x))$
 
 $E(g(x) + h(x)) = \sum_{x} (g(x) \cdot f(x)) + \sum_{x} (h(x) \cdot f(x))$
+
+> _"La esperanza tiene la propiedad de la linealidad"._
+
+Ahora, si tenemos variables aleatorias continuas:
+
+$x$ es una variable aleatoria continua:
+
+$g(x), h(x)$ son variables aleatorias continuas
+
+$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot  h(x)) \cdot f(x) dx$
+
+$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x) + h(x) \cdot f(x))$
+
+$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x)) + \int_{- \infty}^{\infty} (h(x) \cdot f(x))$
