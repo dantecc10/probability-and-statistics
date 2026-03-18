@@ -863,7 +863,7 @@ $\mu = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) dx$
 
 Nota: La función de una variable aleatoria, devuelve una variable aleatoria.
 
-### Miéwrcoles 18 de marzo
+### Miércoles 18 de marzo
 
 $E(x) = 0f(0) + 1f(1) + 2f(2) + 3f(3) + 4f(4) + 5f(5) + 6f(6)$
 
