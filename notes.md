@@ -905,6 +905,6 @@ $g(x), h(x)$ son variables aleatorias continuas
 
 $E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot  h(x)) \cdot f(x) dx$
 
-$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x) + h(x) \cdot f(x))$
+$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x) + h(x) \cdot f(x)) dx$
 
-$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x)) + \int_{- \infty}^{\infty} (h(x) \cdot f(x))$
+$E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x)) dx + \int_{- \infty}^{\infty} (h(x) \cdot f(x)) dx$
