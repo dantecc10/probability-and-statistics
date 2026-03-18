@@ -876,4 +876,5 @@ $\frac{1}{2}^{2} [1 + 2 \cdot \binom{6}{2} + 3 \cdot \binom{6}{3} + 4 \cdot \bin
 > _"El valor esperado de una constante es la constante"._
 
 > _"El valor esperado siempre va a ser la integral de menos infinito a infinito:_
-> _$E(c) = \int{- \infty}^{\infty} c \cdot f(x)dx$"_
+
+$E(c) = \int{- \infty}^{\infty} c \cdot f(x)dx$
