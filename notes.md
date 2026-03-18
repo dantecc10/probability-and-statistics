@@ -862,3 +862,9 @@ $\mu = E(X) = $\sum_{x} x \cdot f(X)$
 $\mu = E(X) = \int_{-\infty}^{\infty} x \cdot f(x) dx$
 
 Nota: La función de una variable aleatoria, devuelve una variable aleatoria.
+
+### Miéwrcoles 18 de marzo
+
+$E(x) = 0f(0) + 1f(1) + 2f(2) + 3f(3) + 4f(4) + 5f(5) + 6f(6)$
+
+$E(x) = 0 \cdot \frac{1}{2}^{6} + 1 \cdot \frac{1}{2}^{6} + 2\cdot \frac{1}{2}^{6} +3 \cdot \frac{1}{2}^{6} + 4 \cdot \frac{1}{2}^{6} + 5 \cdot \frac{1}{2}^{6} + 6 \cdot \frac{1}{2}^{6}$
