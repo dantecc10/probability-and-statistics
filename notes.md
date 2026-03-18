@@ -888,3 +888,9 @@ $E(aX) = \sum_{x} (a \cdot x \cdot f(x))$
 $E(aX) = a \cdot \sum_{x} (x \cdot f(x))$
 
 $E(aX) = a \cdot E(x)$
+
+$E(g(x) + h(x)) = \sum_{x} (g(x) \cdot + h(x)) \cdot f(x))$
+
+$E(g(x) + h(x)) = \sum_{x} (g(x) \cdot f(x) + h(x) \cdot f(x))$
+
+$E(g(x) + h(x)) = \sum_{x} (g(x) \cdot f(x)) + \sum_{x} (h(x) \cdot f(x))$
