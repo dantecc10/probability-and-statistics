@@ -877,4 +877,4 @@ $\frac{1}{2}^{2} [1 + 2 \cdot \binom{6}{2} + 3 \cdot \binom{6}{3} + 4 \cdot \bin
 
 > _"El valor esperado siempre va a ser la integral de menos infinito a infinito:_
 
-$E(c) = \int{- \infty}^{\infty} c \cdot f(x)dx$
+$E(c) = \int_{- \infty}^{\infty} c \cdot f(x)dx$
