@@ -908,3 +908,9 @@ $E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot  h(x)) \cdot f(x) dx$
 $E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x) + h(x) \cdot f(x)) dx$
 
 $E(g(x) + h(x)) = \int_{- \infty}^{\infty} (g(x) \cdot f(x)) dx + \int_{- \infty}^{\infty} (h(x) \cdot f(x)) dx$
+
+### Miércoles 25 de marzo
+
+Hablamos de la esperanza de dos variables aleatorias independientes:
+
+$E(X, Y) = \int_y \int_x xy \cdot f(x, y) dx dy$
