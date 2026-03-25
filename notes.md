@@ -924,3 +924,11 @@ $\int_y (y \cdot h(y) \cdot E(X) dy)$
 $E(X) \cdot \int_y y \cdot h(y) dy$
 
 $E(X) \cdot E(Y)
+
+
+$$
+\begin{cases}
+	\frac{x (1 + 3y^2)}{4}, 0 < x < 2, 0 < y < 1 \\
+	0
+\end{cases}
+$$
