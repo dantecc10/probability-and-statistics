@@ -918,3 +918,7 @@ $E(X, Y) = \int_y \int_x xy \cdot f(x, y) dx dy$
 $\int_y [\int_x (xy \cdot g(x) \cdot h(y) dx)] dy$
 
 $\int_y (y \cdot h(y)) [\int_x (x \cdot g(x) dx)] dy$
+
+$\int_y (y \cdot h(y) \cdot E(X) dy)$
+
+$E(X) \cdot \int_y y \cdot h(y) dy$
