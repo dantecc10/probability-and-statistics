@@ -944,5 +944,5 @@ f(x) =
 \end{cases}
 $$
 
-$\int_{a}^{b} x \cdot (x^2 - 2 \mu \cdot x + {\mu}^2) \cdot \frac{1}{(B -A)} dx
+$\int_{a}^{b} x \cdot (x^2 - 2 \mu \cdot x + {\mu}^2) \cdot \frac{1}{(B -A)} dx$
 
