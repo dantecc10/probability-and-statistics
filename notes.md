@@ -946,3 +946,18 @@ $$
 
 $\int_{a}^{b} x \cdot (x^2 - 2 \mu \cdot x + {\mu}^2) \cdot \frac{1}{(B -A)} dx$
 
+$\int_{a}^{b} (x^3 - 2 \mu x + {\mu}^2) \cdot \frac{1}{(B -A)} dx$
+
+$\frac{1}{(B -A)} \cdot \int_{a}^{b} (x^3 - 2 \mu x + {\mu}^2 x) dx$
+
+$\frac{1}{(B -A)} [(\frac{x^3}{3} - \mu x + {\mu}^2 x)]$
+
+$\frac{1}{(B -A)} [(\frac{b^3}{3} - \mu b + {\mu}^2 b) - (\frac{a^3}{3} - \mu a + {\mu}^2 a)]$
+
+$\frac{1}{(B -A)} [(\frac{1}{3} \cdot (b^3 - a^3) - \mu \cdot (b^2 - a^2) + {\mu}^2 \cdot (b - a))]$
+
+Consideremos:
+
+$b^3 - a^3 = (b - a) \cdot (b^2 + ba + a^2)$
+
+$b^2 - a^2 = (b - a) \cdot (b + a)$
