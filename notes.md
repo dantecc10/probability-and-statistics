@@ -943,3 +943,5 @@ f(x) =
         0, en cualquier otro lugar
 \end{cases}
 $$
+
+$\int_{a}^{b} x \cdot (x^2 - 2 \mu \cdot x + {\mu}^2) \cdot \frac{1}{(B -A)} dx
