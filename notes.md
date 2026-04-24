@@ -961,3 +961,5 @@ Consideremos:
 $b^3 - a^3 = (b - a) \cdot (b^2 + ba + a^2)$
 
 $b^2 - a^2 = (b - a) \cdot (b + a)$
+
+$\mu = (\frac{b + a}{2})^2$
