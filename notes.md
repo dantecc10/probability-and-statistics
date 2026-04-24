@@ -933,3 +933,13 @@ f(x, y) =
 	0
 \end{cases}
 $$
+
+### Miércoles 24 de abril
+
+$$
+f(x) =
+\begin{cases}
+        \frac{1}{(B - A)}, A \Leq x \Leq B \\
+        0, en cualquier otro lugar
+\end{cases}
+$$
