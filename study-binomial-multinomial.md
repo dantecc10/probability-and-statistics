@@ -20,7 +20,7 @@ $P(X = 2) = \binom{10}{2}(0.05)^{2}(0.95)^{8}$
 
 $P(X = 2) = (45) \cdot (0.0025) \cdot (0.6634) \approx 0.0746$
 
-**Resultado:** Hay un $7.46%$ de probabilidad de encontrar exactamente 2 piezas defectuosas.
+**Resultado:** Hay un $7.46 \%$ de probabilidad de encontrar exactamente 2 piezas defectuosas.
 
 ### **2\. Distribución Multinomial: Clasificación de Materiales**
 
