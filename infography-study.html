@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infografía: Distribuciones Discretas en Ingeniería</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 350px;
+    }
+}
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+</style>
+</head>
+<body class="font-sans antialiased">
+<!-- Palette: Vibrant Material (Indigo #4f46e5, Pink #ec4899, Amber #f59e0b, Teal #14b8a6) -->
+<!-- Narrative Plan: 1. Intro to Discrete Variables. 2. Binomial & Bernoulli Processes (Manufacturing). 3. Multinomial Categories. 4. Hypergeometric vs Binomial (Sampling). 5. Geometric (Time to first defect). 6. Poisson (Defects per area). -->
+<!-- Chart Selections: 1. Binomial -> Bar Chart (Compare probabilities across counts). 2. Multinomial -> Doughnut (Show composition). 3. Hypergeometric -> Line Chart (Compare with Binomial trend). 4. Geometric -> Area Chart (Show decay). 5. Poisson -> Scatter Plot (Show relationship of lambda and events). All using Chart.js Canvas. NO SVG used. -->
+<!-- Explicitly confirm that NEITHER Mermaid JS NOR SVG were used anywhere in the output within the HTML comments. -->
+
+<header class="bg-indigo-600 text-white p-8 md:p-12 shadow-lg mb-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4">&#128202; Modelos de Probabilidad Discreta</h1>
+        <p class="text-xl md:text-2xl font-light text-indigo-100 max-w-3xl">Síntesis visual del Capítulo 5 de Walpole: Aplicaciones en control de calidad, muestreo de aceptación y confiabilidad en ingeniería.</p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <section class="mb-12 bg-white rounded-2xl shadow-md p-8 border-t-4 border-amber-500">
+        <h2 class="text-3xl font-bold text-slate-800 mb-4">&#128269; El Valor de las Variables Discretas</h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+            En la práctica de la ingeniería, a menudo nos enfrentamos a variables que representan conteos: número de artículos defectuosos en un lote, cantidad de llamadas a un servidor en un minuto, o los intentos hasta que una pieza falla. Las distribuciones discretas proporcionan el marco matemático para predecir y controlar estos escenarios, permitiendo tomar decisiones informadas sobre tolerancias y procesos.
+        </p>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <article class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-3xl">&#9881;&#65039;</span>
+                    <h3 class="text-2xl font-bold text-indigo-600">Proceso de Bernoulli y Distribución Binomial</h3>
+                </div>
+                <p class="text-sm text-slate-600 mb-6">
+                    Mide el número de éxitos en $n$ ensayos independientes. En este ejemplo industrial, evaluamos la probabilidad de encontrar exactamente $x$ motores defectuosos en una muestra de 15, asumiendo una tasa de defecto constante del 10% ($p=0.10$). La mayor probabilidad se concentra en encontrar 1 o 2 defectos.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="binomialChart"></canvas>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-3xl">&#127919;</span>
+                    <h3 class="text-2xl font-bold text-pink-600">Distribución Multinomial</h3>
+                </div>
+                <p class="text-sm text-slate-600 mb-6">
+                    Una generalización de la Binomial donde hay más de dos resultados posibles. El gráfico ilustra la probabilidad conjunta en la clasificación de microchips producidos en una oblea: 60% de primera calidad, 30% aceptables y 10% descartables, demostrando la composición esperada de producción.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="multinomialChart"></canvas>
+            </div>
+        </article>
+    </div>
+
+    <section class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-3xl">&#128230;</span>
+            <h3 class="text-2xl font-bold text-teal-600">Muestreo sin Reemplazo: Hipergeométrica vs. Binomial</h3>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <p class="text-base text-slate-600">
+                La distribución hipergeométrica es vital cuando extraemos elementos de una población finita sin devolverlos, rompiendo la regla de independencia. Este gráfico compara el cálculo exacto (Hipergeométrica) frente a la aproximación (Binomial) al sacar 5 piezas de un lote de 50. Como la muestra es el 10% de la población (mayor al umbral empírico del 5%), las diferencias empiezan a ser notables.
+            </p>
+            <div class="chart-container">
+                <canvas id="hyperChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <article class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between border-l-4 border-amber-500">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-3xl">&#9201;&#65039;</span>
+                    <h3 class="text-2xl font-bold text-amber-600">El "Parado de Éxitos": Distribución Geométrica</h3>
+                </div>
+                <p class="text-sm text-slate-600 mb-6">
+                    A diferencia de contar éxitos en $n$ intentos, aquí medimos *cuántos intentos* se requieren para el primer éxito (o falla). Evaluamos una línea de ensamblaje donde la probabilidad de calibración errónea es del 15%. La curva muestra el decaimiento probabilístico del número de inspecciones hasta hallar el primer error.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="geometricChart"></canvas>
+            </div>
+        </article>
+
+        <article class="bg-white rounded-2xl shadow-lg p-6 flex flex-col justify-between border-l-4 border-indigo-500">
+            <div>
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-3xl">&#128161;</span>
+                    <h3 class="text-2xl font-bold text-indigo-800">Proceso de Poisson en el Continuo</h3>
+                </div>
+                <p class="text-sm text-slate-600 mb-6">
+                    Se aplica a eventos discretos que ocurren en un intervalo continuo (tiempo, área, longitud). Representamos las imperfecciones en láminas de acero. Con un promedio de $\lambda = 3$ defectos por metro cuadrado, el gráfico de dispersión marca la probabilidad de observar $0, 1, 2, \dots$ defectos puntuales en una muestra estándar.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="poissonChart"></canvas>
+            </div>
+        </article>
+    </div>
+
+    <section class="mt-12 bg-slate-800 text-white rounded-xl shadow-md p-6 text-center">
+        <h3 class="text-xl font-semibold mb-2">&#128221; Flujo de Decisión para Ingenieros</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6 text-sm">
+            <div class="bg-slate-700 p-4 rounded-lg">
+                <strong class="text-amber-400 block mb-1">Paso 1</strong>
+                ¿La variable representa conteos discretos? (Si no, buscar distribuciones continuas).
+            </div>
+            <div class="bg-slate-700 p-4 rounded-lg">
+                <strong class="text-pink-400 block mb-1">Paso 2</strong>
+                ¿Ocurre en ensayos fijos o en un medio continuo? (Continuo $\rightarrow$ Poisson).
+            </div>
+            <div class="bg-slate-700 p-4 rounded-lg">
+                <strong class="text-teal-400 block mb-1">Paso 3</strong>
+                Si son ensayos fijos, ¿son independientes? (No / Sin reemplazo $\rightarrow$ Hipergeométrica).
+            </div>
+            <div class="bg-slate-700 p-4 rounded-lg">
+                <strong class="text-indigo-400 block mb-1">Paso 4</strong>
+                Si son independientes, ¿qué medimos? (Éxitos $\rightarrow$ Binomial. Intentos $\rightarrow$ Geométrica).
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+function wrapLabel(label) {
+    if (label.length <= 16) return label;
+    let words = label.split(' ');
+    let lines = [];
+    let currentLine = words[0];
+    for (let i = 1; i < words.length; i++) {
+        if (currentLine.length + 1 + words[i].length <= 16) {
+            currentLine += ' ' + words[i];
+        } else {
+            lines.push(currentLine);
+            currentLine = words[i];
+        }
+    }
+    lines.push(currentLine);
+    return lines;
+}
+
+const customTooltipPlugin = {
+    plugins: {
+        tooltip: {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        }
+    }
+};
+
+const binomialLabels = ["0 Defectos", "1 Defecto", "2 Defectos", "3 Defectos", "4 Defectos", "5 Defectos"].map(wrapLabel);
+new Chart(document.getElementById('binomialChart'), {
+    type: 'bar',
+    data: {
+        labels: binomialLabels,
+        datasets: [{
+            label: 'Probabilidad P(x)',
+            data: [0.2059, 0.3432, 0.2669, 0.1285, 0.0428, 0.0105],
+            backgroundColor: '#4f46e5',
+            borderRadius: 6
+        }]
+    },
+    options: Object.assign({
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true, max: 0.4 } }
+    }, customTooltipPlugin)
+});
+
+const multiLabels = ["Categoría Calidad Óptima", "Categoría Defecto Menor", "Categoría Rechazo Total"].map(wrapLabel);
+new Chart(document.getElementById('multinomialChart'), {
+    type: 'doughnut',
+    data: {
+        labels: multiLabels,
+        datasets: [{
+            data: [60, 30, 10],
+            backgroundColor: ['#ec4899', '#f59e0b', '#1e293b'],
+            borderWidth: 0,
+            hoverOffset: 10
+        }]
+    },
+    options: Object.assign({
+        maintainAspectRatio: false,
+        cutout: '60%'
+    }, customTooltipPlugin)
+});
+
+const hyperLabels = ["0 piezas", "1 pieza", "2 piezas", "3 piezas", "4 piezas"].map(wrapLabel);
+new Chart(document.getElementById('hyperChart'), {
+    type: 'line',
+    data: {
+        labels: hyperLabels,
+        datasets: [
+            {
+                label: 'Hipergeométrica (Exacta)',
+                data: [0.564, 0.359, 0.072, 0.005, 0.000],
+                borderColor: '#14b8a6',
+                backgroundColor: 'rgba(20, 184, 166, 0.2)',
+                tension: 0.3,
+                fill: true
+            },
+            {
+                label: 'Binomial (Aproximada)',
+                data: [0.590, 0.328, 0.073, 0.008, 0.000],
+                borderColor: '#64748b',
+                borderDash: [5, 5],
+                tension: 0.3
+            }
+        ]
+    },
+    options: Object.assign({
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true } }
+    }, customTooltipPlugin)
+});
+
+const geomLabels = ["Intento Uno", "Intento Dos", "Intento Tres", "Intento Cuatro", "Intento Cinco", "Intento Seis"].map(wrapLabel);
+new Chart(document.getElementById('geometricChart'), {
+    type: 'line',
+    data: {
+        labels: geomLabels,
+        datasets: [{
+            label: 'Probabilidad del primer éxito en x',
+            data: [0.150, 0.128, 0.108, 0.092, 0.078, 0.066],
+            backgroundColor: 'rgba(245, 158, 11, 0.5)',
+            borderColor: '#f59e0b',
+            fill: true,
+            tension: 0.1,
+            pointRadius: 6,
+            pointBackgroundColor: '#fff'
+        }]
+    },
+    options: Object.assign({
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true } }
+    }, customTooltipPlugin)
+});
+
+const poissonLabels = ["Cero Errores", "Un Error", "Dos Errores", "Tres Errores", "Cuatro Errores", "Cinco Errores", "Seis Errores"].map(wrapLabel);
+new Chart(document.getElementById('poissonChart'), {
+    type: 'scatter',
+    data: {
+        datasets: [{
+            label: 'Lambda = 3',
+            data: [
+                {x: 0, y: 0.050}, {x: 1, y: 0.149}, {x: 2, y: 0.224}, 
+                {x: 3, y: 0.224}, {x: 4, y: 0.168}, {x: 5, y: 0.101}, {x: 6, y: 0.050}
+            ],
+            backgroundColor: '#4f46e5',
+            pointRadius: 10,
+            pointHoverRadius: 14
+        }]
+    },
+    options: Object.assign({
+        maintainAspectRatio: false,
+        scales: {
+            x: { 
+                type: 'category', 
+                labels: poissonLabels,
+                title: { display: true, text: 'Conteo de eventos en el continuo' }
+            },
+            y: { beginAtZero: true, max: 0.3 }
+        }
+    }, customTooltipPlugin)
+});
+</script>
+</body>
+</html>
