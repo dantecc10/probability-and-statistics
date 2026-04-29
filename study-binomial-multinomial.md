@@ -8,9 +8,9 @@ En estos problemas, el foco es el conteo de éxitos en ensayos independientes.
 
 **Identificación:**
 
-* **Ensayos (![][image4]):** ![][image2] (fijo e independiente).  
-* **Probabilidad de éxito (![][image5]):** ![][image6] (pieza defectuosa).  
-* **Variable (![][image7]):** ![][image3].
+* **Ensayos ($n$)**: 10 (fijo e independiente).  
+* **Probabilidad de éxito ($p$):** 0.05 (pieza defectuosa).  
+* **Variable ($x$):** 2.
 
 **Solución:**
 
