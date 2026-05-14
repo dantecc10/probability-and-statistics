@@ -1,6 +1,8 @@
+import json
 import random
 import tkinter as tk
 from collections import Counter
+from pathlib import Path
 from tkinter import messagebox
 from tkinter import ttk
 
@@ -10,7 +12,10 @@ class DiceApp:
 		self.root = root
 		self.root.title("Simulador de Dado")
 		self.root.geometry("980x640")
-		self.root.minsize(900, 560)
+		self.root.minsize(900, 700)
+
+		self.sessions_dir = Path(__file__).resolve().parent / "sessions"
+		self.sessions_dir.mkdir(parents=True, exist_ok=True)
 
 		self.historial: list[int] = []
 		self.seleccionados: set[int] = set(range(1, 7))
@@ -65,6 +70,44 @@ class DiceApp:
 		for i in (0, 2):
 			controles.columnconfigure(i, weight=1)
 
+		sesion_frame = ttk.LabelFrame(col_izq, text="Sesiones", padding=8)
+		sesion_frame.pack(fill="x", pady=(0, 10))
+
+		self.entrada_sesion = ttk.Entry(sesion_frame)
+		self.entrada_sesion.grid(row=0, column=0, padx=4, pady=4, sticky="ew")
+		self.entrada_sesion.insert(0, "mi_sesion")
+
+		self.btn_guardar_sesion = ttk.Button(
+			sesion_frame,
+			text="Guardar sesión",
+			command=self.guardar_sesion,
+		)
+		self.btn_guardar_sesion.grid(row=0, column=1, padx=4, pady=4, sticky="ew")
+
+		self.btn_cargar_sesion = ttk.Button(
+			sesion_frame,
+			text="Cargar sesión",
+			command=self.cargar_sesion,
+		)
+		self.btn_cargar_sesion.grid(row=0, column=2, padx=4, pady=4, sticky="ew")
+
+		self.combo_sesiones = ttk.Combobox(sesion_frame, state="readonly")
+		self.combo_sesiones.grid(row=1, column=0, padx=4, pady=4, sticky="ew")
+		self.combo_sesiones.bind("<<ComboboxSelected>>", self._copiar_nombre_sesion)
+
+		self.btn_actualizar_sesiones = ttk.Button(
+			sesion_frame,
+			text="Actualizar lista",
+			command=self._actualizar_lista_sesiones,
+		)
+		self.btn_actualizar_sesiones.grid(row=1, column=1, padx=4, pady=4, sticky="ew")
+
+		sesion_frame.columnconfigure(0, weight=2)
+		for i in (1, 2):
+			sesion_frame.columnconfigure(i, weight=1)
+
+		self._actualizar_lista_sesiones()
+
 		self.lbl_estado = ttk.Label(col_izq, text="Listo.")
 		self.lbl_estado.pack(anchor="w", pady=(0, 8))
 
@@ -76,6 +119,17 @@ class DiceApp:
 		self.txt_historial.configure(state="disabled")
 
 		check_frame = ttk.LabelFrame(col_der, text="Checklist (caras seleccionadas)", padding=8)
+
+		espacio_frame = ttk.LabelFrame(col_der, text="Espacio muestral", padding=8)
+		espacio_frame.pack(fill="x", pady=(0, 10))
+
+		self.var_espacio = tk.StringVar(value="Ω = {1, 2, 3, 4, 5, 6}")
+		entrada_espacio = ttk.Entry(espacio_frame, textvariable=self.var_espacio, state="readonly")
+		entrada_espacio.pack(fill="x")
+
+		lbl_cardinalidad = ttk.Label(espacio_frame, text="Cardinalidad: n(Ω) = 6")
+		lbl_cardinalidad.pack(anchor="w", pady=(6, 0))
+
 		check_frame.pack(fill="x", pady=(0, 10))
 
 		for cara in range(1, 7):
@@ -87,7 +141,7 @@ class DiceApp:
 			)
 			chk.pack(anchor="w")
 
-		stats_frame = ttk.LabelFrame(col_der, text="Estadisticas", padding=10)
+		stats_frame = ttk.LabelFrame(col_der, text="Estadísticas", padding=10)
 		stats_frame.pack(fill="both", expand=True)
 
 		self.lbl_totales = ttk.Label(stats_frame, text="Tiradas totales: 0")
@@ -156,7 +210,7 @@ class DiceApp:
 		)
 
 	def _actualizar_historial(self) -> None:
-		texto = ", ".join(str(v) for v in self.historial) if self.historial else "Aun no hay tiradas."
+		texto = ", ".join(str(v) for v in self.historial) if self.historial else "Aún no hay lanzamientos."
 		self.txt_historial.configure(state="normal")
 		self.txt_historial.delete("1.0", "end")
 		self.txt_historial.insert("1.0", texto)
@@ -204,6 +258,104 @@ class DiceApp:
 			rel = fa / total
 			lineas.append(f"Cara {cara}: fa={fa} | fr={rel:.4f} ({rel * 100:.2f}%)")
 		self.lbl_frecuencias.config(text="\n".join(lineas))
+
+	def _nombre_sesion_limpio(self, nombre: str) -> str:
+		permitidos = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_")
+		nombre_base = nombre.strip().replace(" ", "_")
+		limpio = "".join(ch for ch in nombre_base if ch in permitidos)
+		return limpio
+
+	def _ruta_sesion(self, nombre: str) -> Path | None:
+		nombre_limpio = self._nombre_sesion_limpio(nombre)
+		if not nombre_limpio:
+			return None
+		return self.sessions_dir / f"{nombre_limpio}.json"
+
+	def _actualizar_lista_sesiones(self) -> None:
+		nombres = sorted(p.stem for p in self.sessions_dir.glob("*.json"))
+		self.combo_sesiones["values"] = nombres
+		if nombres and not self.combo_sesiones.get():
+			self.combo_sesiones.set(nombres[0])
+
+	def _copiar_nombre_sesion(self, _event: tk.Event) -> None:
+		nombre = self.combo_sesiones.get().strip()
+		if not nombre:
+			return
+		self.entrada_sesion.delete(0, "end")
+		self.entrada_sesion.insert(0, nombre)
+
+	def guardar_sesion(self) -> None:
+		if self.animando:
+			self.lbl_estado.config(text="Espera a que termine la animación para guardar.")
+			return
+
+		nombre = self.entrada_sesion.get().strip()
+		ruta = self._ruta_sesion(nombre)
+		if ruta is None:
+			messagebox.showerror(
+				"Nombre inválido",
+				"Usa letras, números, guion o guion bajo para el nombre de sesión.",
+			)
+			return
+
+		payload = {
+			"historial": self.historial,
+			"seleccionados": sorted(self.seleccionados),
+		}
+
+		try:
+			with ruta.open("w", encoding="utf-8") as f:
+				json.dump(payload, f, ensure_ascii=False, indent=2)
+		except OSError as exc:
+			messagebox.showerror("Error", f"No se pudo guardar la sesión: {exc}")
+			return
+
+		self._actualizar_lista_sesiones()
+		self.combo_sesiones.set(ruta.stem)
+		self.lbl_estado.config(text=f"Sesión guardada: {ruta.stem}")
+
+	def cargar_sesion(self) -> None:
+		if self.animando:
+			self.lbl_estado.config(text="Espera a que termine la animación para cargar.")
+			return
+
+		nombre = self.entrada_sesion.get().strip()
+		ruta = self._ruta_sesion(nombre)
+		if ruta is None or not ruta.exists():
+			messagebox.showerror("No encontrada", "La sesión indicada no existe en la carpeta sessions.")
+			return
+
+		try:
+			with ruta.open("r", encoding="utf-8") as f:
+				payload = json.load(f)
+		except (OSError, json.JSONDecodeError) as exc:
+			messagebox.showerror("Error", f"No se pudo leer la sesión: {exc}")
+			return
+
+		historial = payload.get("historial", [])
+		seleccionados = set(payload.get("seleccionados", [1, 2, 3, 4, 5, 6]))
+
+		if not isinstance(historial, list) or any(v not in {1, 2, 3, 4, 5, 6} for v in historial):
+			messagebox.showerror("Datos inválidos", "El historial de la sesión es inválido.")
+			return
+
+		if not seleccionados or any(v not in {1, 2, 3, 4, 5, 6} for v in seleccionados):
+			messagebox.showerror("Datos inválidos", "La selección de caras en la sesión es inválida.")
+			return
+
+		self.historial = [int(v) for v in historial]
+		self.seleccionados = {int(v) for v in seleccionados}
+
+		for cara, var in self.check_vars.items():
+			var.set(cara in self.seleccionados)
+
+		ultimo = self.historial[-1] if self.historial else 1
+		self._dibujar_dado(ultimo)
+		self._actualizar_historial()
+		self._actualizar_estadisticas()
+		self._actualizar_lista_sesiones()
+		self.combo_sesiones.set(ruta.stem)
+		self.lbl_estado.config(text=f"Sesión cargada: {ruta.stem}")
 
 	def _registrar_resultado(self, resultado: int) -> None:
 		self.historial.append(resultado)
@@ -305,11 +457,11 @@ class DiceApp:
 	def mostrar_grafica(self) -> None:
 		filtrados = self._obtener_filtrados()
 		if not filtrados:
-			messagebox.showinfo("Grafica", "No hay datos para graficar con la selección actual.")
+			messagebox.showinfo("Gráfica", "No hay datos para graficar con la selección actual.")
 			return
 
 		ventana = tk.Toplevel(self.root)
-		ventana.title("Grafica de resultados")
+		ventana.title("Gráfica de resultados")
 		ventana.geometry("820x480")
 
 		canvas = tk.Canvas(ventana, width=820, height=480, bg="white", highlightthickness=0)
