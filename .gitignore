@@ -1,1 +1,3 @@
 .venv/
+dice/__pycache__/
+dice/.venv/*

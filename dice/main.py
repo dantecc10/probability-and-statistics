@@ -23,7 +23,7 @@ class DiceApp:
 		self.root = root
 		self.root.title("Simulador de Dado")
 		self.root.geometry("980x640")
-		self.root.minsize(900, 750)
+		self.root.minsize(900, 770)
 
 		self.sessions_dir = Path(__file__).resolve().parent / "sessions"
 		self.sessions_dir.mkdir(parents=True, exist_ok=True)
@@ -31,6 +31,7 @@ class DiceApp:
 		self.historial: list[tuple[int, ...]] = []
 		self.seleccionados: set[int] = set(range(1, 7))
 		self.cantidad_dados = 1
+		self._cache_espacios: dict[int, list[tuple[int, ...]]] = {}
 		self.animando = False
 
 		self.check_vars: dict[int, tk.BooleanVar] = {
@@ -88,6 +89,20 @@ class DiceApp:
 
 		self.btn_graf = ttk.Button(controles, text="Graficar resultados", command=self.mostrar_grafica)
 		self.btn_graf.grid(row=2, column=2, padx=4, pady=4, sticky="ew")
+
+		self.btn_lista_espacio = ttk.Button(
+			controles,
+			text="Ver espacio muestral",
+			command=self.mostrar_lista_espacio_muestral,
+		)
+		self.btn_lista_espacio.grid(row=3, column=0, padx=4, pady=4, sticky="ew")
+
+		self.btn_hist_espacio = ttk.Button(
+			controles,
+			text="Histograma espacio",
+			command=self.mostrar_histograma_espacio_muestral,
+		)
+		self.btn_hist_espacio.grid(row=3, column=2, padx=4, pady=4, sticky="ew")
 
 		for i in (0, 2):
 			controles.columnconfigure(i, weight=1)
@@ -190,20 +205,52 @@ class DiceApp:
 		return int(texto)
 
 	def _formatear_espacio_muestral(self, cantidad_dados: int) -> str:
+		espacio = self._obtener_espacio_muestral(cantidad_dados)
 		if cantidad_dados == 1:
-			return "Ω = {1, 2, 3, 4, 5, 6}"
+			contenido = ", ".join(str(t[0]) for t in espacio)
+			return f"Ω = {{{contenido}}}"
 
-		if cantidad_dados == 2:
-			elementos = [str(par) for par in product(range(1, 7), repeat=2)]
-			return "Ω = {" + ", ".join(elementos) + "}"
+		if cantidad_dados <= 2:
+			contenido = ", ".join(str(t) for t in espacio)
+			return f"Ω = {{{contenido}}}"
 
-		muestras = [str(t) for t in islice(product(range(1, 7), repeat=cantidad_dados), 12)]
+		muestras = ", ".join(str(t) for t in islice(espacio, 15))
+		nombres = {
+			3: "(x, y, z)",
+			4: "(x, y, z, w)",
+			5: "(x, y, z, w, u)",
+			6: "(x, y, z, w, u, v)",
+		}
+		notacion = nombres.get(cantidad_dados, f"(x1, ..., x{cantidad_dados})")
 		return (
-			f"Ω = {{(x1, ..., x{cantidad_dados}) : xi ∈ {{1, 2, 3, 4, 5, 6}}}}\n"
+			f"Ω = {{{notacion} : cada componente en {{1, 2, 3, 4, 5, 6}}}}\n"
+			+ f"Total de eventos: {len(espacio)}. "
 			+ "Ejemplos: "
-			+ ", ".join(muestras)
+			+ muestras
 			+ ", ..."
 		)
+
+	def _obtener_espacio_muestral(self, cantidad_dados: int) -> list[tuple[int, ...]]:
+		if cantidad_dados not in self._cache_espacios:
+			self._cache_espacios[cantidad_dados] = list(product(range(1, 7), repeat=cantidad_dados))
+		return self._cache_espacios[cantidad_dados]
+
+	def _formatear_evento(self, evento: tuple[int, ...]) -> str:
+		if len(evento) == 1:
+			return str(evento[0])
+		return str(evento)
+
+	def _historial_misma_dimension(self) -> list[tuple[int, ...]]:
+		return [evento for evento in self.historial if len(evento) == self.cantidad_dados]
+
+	def _obtener_frecuencias_espacio_muestral(self) -> list[tuple[tuple[int, ...], int, float]]:
+		espacio = self._obtener_espacio_muestral(self.cantidad_dados)
+		historial_dimension = self._historial_misma_dimension()
+		total = len(historial_dimension)
+		conteo = Counter(historial_dimension)
+		if total == 0:
+			return [(evento, 0, 0.0) for evento in espacio]
+		return [(evento, conteo.get(evento, 0), conteo.get(evento, 0) / total) for evento in espacio]
 
 	def _actualizar_espacio_muestral(self) -> None:
 		texto = self._formatear_espacio_muestral(self.cantidad_dados)
@@ -341,9 +388,11 @@ class DiceApp:
 
 	def _actualizar_estadisticas(self) -> None:
 		filtrados = [v for v in self._obtener_resultados_individuales() if v in self.seleccionados]
+		historial_dimension = self._historial_misma_dimension()
 
 		lineas: list[str] = []
 		lineas.append(f"Experimentos totales: {len(self.historial)}")
+		lineas.append(f"Experimentos de {self.cantidad_dados} dado(s): {len(historial_dimension)}")
 		lineas.append(f"Resultados filtrados: {len(filtrados)}")
 		lineas.append("")
 
@@ -382,6 +431,10 @@ class DiceApp:
 			rel = fa / total
 			lineas.append(f"  Cara {cara}: fa={fa} | fr={rel:.4f} ({rel * 100:.2f}%)")
 		lineas.append("")
+		lineas.append("Frecuencias del espacio muestral completo:")
+		lineas.append(f"  Cardinalidad n(Ω): {6 ** self.cantidad_dados}")
+		lineas.append("  Usa 'Ver espacio muestral' para ver cada evento con fa y fr.")
+		lineas.append("")
 
 		lineas.append("Estadísticas por dado:")
 		for indice_dado, resultados_dado in enumerate(self._obtener_resultados_por_dado(), start=1):
@@ -408,6 +461,130 @@ class DiceApp:
 				fr_dado = fa_dado / len(filtrados_dado)
 				lineas.append(f"      Cara {cara}: fa={fa_dado} | fr={fr_dado:.4f} ({fr_dado * 100:.2f}%)")
 		self._escribir_stats("\n".join(lineas))
+
+	def mostrar_lista_espacio_muestral(self) -> None:
+		datos = self._obtener_frecuencias_espacio_muestral()
+		total = len(self._historial_misma_dimension())
+
+		ventana = tk.Toplevel(self.root)
+		ventana.title("Lista del espacio muestral")
+		ventana.geometry("900x560")
+
+		resumen = (
+			f"Dados: {self.cantidad_dados} | Cardinalidad n(Ω): {len(datos)} | "
+			f"Experimentos de esta dimensión: {total}"
+		)
+		ttk.Label(ventana, text=resumen).pack(anchor="w", padx=10, pady=(10, 6))
+
+		marco = ttk.Frame(ventana, padding=(8, 4, 8, 8))
+		marco.pack(fill="both", expand=True)
+
+		columnas = ("evento", "fa", "fr", "porcentaje")
+		tabla = ttk.Treeview(marco, columns=columnas, show="headings")
+		tabla.heading("evento", text="Evento")
+		tabla.heading("fa", text="Frecuencia abs.")
+		tabla.heading("fr", text="Frecuencia rel.")
+		tabla.heading("porcentaje", text="Porcentaje")
+		tabla.column("evento", width=260, anchor="w")
+		tabla.column("fa", width=150, anchor="center")
+		tabla.column("fr", width=150, anchor="center")
+		tabla.column("porcentaje", width=150, anchor="center")
+
+		sb_y = ttk.Scrollbar(marco, orient="vertical", command=tabla.yview)
+		sb_x = ttk.Scrollbar(marco, orient="horizontal", command=tabla.xview)
+		tabla.configure(yscrollcommand=sb_y.set, xscrollcommand=sb_x.set)
+
+		tabla.grid(row=0, column=0, sticky="nsew")
+		sb_y.grid(row=0, column=1, sticky="ns")
+		sb_x.grid(row=1, column=0, sticky="ew")
+		marco.rowconfigure(0, weight=1)
+		marco.columnconfigure(0, weight=1)
+
+		for evento, fa, fr in datos:
+			tabla.insert(
+				"",
+				"end",
+				values=(
+					self._formatear_evento(evento),
+					fa,
+					f"{fr:.6f}",
+					f"{fr * 100:.4f}%",
+				),
+			)
+
+	def mostrar_histograma_espacio_muestral(self) -> None:
+		datos = self._obtener_frecuencias_espacio_muestral()
+		cantidad_eventos = len(datos)
+
+		if cantidad_eventos == 0:
+			messagebox.showinfo("Histograma espacio", "No hay espacio muestral para mostrar.")
+			return
+
+		max_eventos_visibles = 240
+		datos_graf = datos
+		titulo_extra = ""
+		if cantidad_eventos > max_eventos_visibles:
+			datos_graf = sorted(datos, key=lambda t: (t[2], t[1]), reverse=True)[:max_eventos_visibles]
+			titulo_extra = f" (mostrando {max_eventos_visibles} de {cantidad_eventos})"
+
+		ventana = tk.Toplevel(self.root)
+		ventana.title("Histograma del espacio muestral")
+		ventana.geometry("1080x620")
+
+		lienzo_frame = ttk.Frame(ventana)
+		lienzo_frame.pack(fill="both", expand=True)
+
+		canvas = tk.Canvas(lienzo_frame, bg="white", highlightthickness=0)
+		sb_y = ttk.Scrollbar(lienzo_frame, orient="vertical", command=canvas.yview)
+		sb_x = ttk.Scrollbar(lienzo_frame, orient="horizontal", command=canvas.xview)
+		canvas.configure(yscrollcommand=sb_y.set, xscrollcommand=sb_x.set)
+
+		canvas.grid(row=0, column=0, sticky="nsew")
+		sb_y.grid(row=0, column=1, sticky="ns")
+		sb_x.grid(row=1, column=0, sticky="ew")
+		lienzo_frame.rowconfigure(0, weight=1)
+		lienzo_frame.columnconfigure(0, weight=1)
+
+		margen_izq = 80
+		margen_sup = 70
+		altura_barras = 360
+		base_y = margen_sup + altura_barras
+		paso_x = 34
+		ancho_barra = 22
+		ancho_total = max(1000, margen_izq + len(datos_graf) * paso_x + 140)
+		alto_total = 560
+
+		canvas.create_text(
+			ancho_total // 2,
+			26,
+			text=f"Histograma de frecuencia relativa por evento{titulo_extra}",
+			font=("TkDefaultFont", 14, "bold"),
+		)
+		canvas.create_line(margen_izq, margen_sup, margen_izq, base_y, width=2)
+		canvas.create_line(margen_izq, base_y, ancho_total - 40, base_y, width=2)
+
+		for pct in range(0, 101, 10):
+			y = base_y - (pct / 100) * altura_barras
+			canvas.create_line(margen_izq - 4, y, margen_izq, y, width=2)
+			canvas.create_text(margen_izq - 28, y, text=f"{pct}%", fill="#444444")
+			if pct > 0:
+				canvas.create_line(margen_izq, y, ancho_total - 40, y, fill="#f0f0f0")
+
+		for i, (evento, _fa, fr) in enumerate(datos_graf):
+			x0 = margen_izq + i * paso_x + 8
+			x1 = x0 + ancho_barra
+			y1 = base_y
+			y0 = y1 - (fr * altura_barras)
+			canvas.create_rectangle(x0, y0, x1, y1, fill="#2a9d8f", outline="#1f6f63")
+			etiqueta = self._formatear_evento(evento)
+			canvas.create_text((x0 + x1) / 2, base_y + 14, text=etiqueta, angle=90, anchor="w", font=("TkDefaultFont", 8))
+
+		texto_info = (
+			f"Total de eventos en Ω: {cantidad_eventos}. "
+			+ "Eje Y: frecuencia relativa (%) de cada evento completo."
+		)
+		canvas.create_text(ancho_total // 2, alto_total - 24, text=texto_info, fill="#444444")
+		canvas.configure(scrollregion=(0, 0, ancho_total, alto_total))
 
 	def _nombre_sesion_limpio(self, nombre: str) -> str:
 		permitidos = set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_")

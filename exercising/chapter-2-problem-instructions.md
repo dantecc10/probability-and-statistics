@@ -395,7 +395,7 @@ Solución:
 a) Personas en fila sin restricciones:
 
 $$
-N_a = 6! = 720
+N_a = 6! = 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 720
 $$
 
 b) Si 3 personas específicas deben ir juntas:
@@ -403,19 +403,19 @@ b) Si 3 personas específicas deben ir juntas:
 Las 3 personas se tratan como un bloque. Entonces hay $4$ objetos en total (bloque + 3 personas restantes):
 
 $$
-4!
+4! = 4\cdot 3\cdot 2\cdot 1
 $$
 
 y dentro del bloque se pueden ordenar de:
 
 $$
-3!
+3! = 3\cdot 2\cdot 1
 $$
 
 Por tanto:
 
 $$
-N_b = 4!\cdot 3! = 24 \cdot 6 = 144
+N_b = (4\cdot 3\cdot 2\cdot 1)(3\cdot 2\cdot 1) = 24\cdot 6 = 144
 $$
 
 c) Si 2 personas específicas no quieren ir juntas:
@@ -423,7 +423,7 @@ c) Si 2 personas específicas no quieren ir juntas:
 Primero el total sin restricción:
 
 $$
-6! = 720
+6! = 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 720
 $$
 
 Ahora resto los casos en los que sí van juntas. Si van juntas, se consideran un bloque:
@@ -432,13 +432,13 @@ Ahora resto los casos en los que sí van juntas. Si van juntas, se consideran un
 - orden interno del bloque: $2!$.
 
 $$
-N_{\text{juntas}} = 5!\cdot 2! = 120\cdot 2 = 240
+N_{\text{juntas}} = (5\cdot 4\cdot 3\cdot 2\cdot 1)(2\cdot 1) = 120\cdot 2 = 240
 $$
 
 Entonces:
 
 $$
-N_c = 6! - 5!\cdot 2! = 720 - 240 = 480
+N_c = (6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1) - (5\cdot 4\cdot 3\cdot 2\cdot 1)(2\cdot 1) = 720 - 240 = 480
 $$
 
 ---
@@ -478,13 +478,13 @@ Solución:
 a) La palabra COLUMNA tiene $7$ letras distintas, por lo tanto:
 
 $$
-N_a = 7! = 5040
+N_a = 7! = 7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 5040
 $$
 
 b) Si deben comenzar con M, fijo esa letra en la primera posición y permuto las $6$ restantes:
 
 $$
-N_b = 6! = 720
+N_b = 6! = 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 720
 $$
 
 ---
@@ -502,7 +502,7 @@ Hay $9$ casas diferentes y $9$ lotes distintos en total ($6$ de un lado y $3$ de
 El número de formas de asignar casas a lotes es una permutación de $9$ elementos:
 
 $$
-N = 9!
+N = 9! = 9\cdot 8\cdot 7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1
 $$
 
 Resultado:
@@ -599,7 +599,7 @@ Ahora ordeno personas dentro de sus lugares:
 - niños en 4 lugares: $4!$.
 
 $$
-N = 5!\cdot 4! = 120\cdot 24 = 2880
+N = (5\cdot 4\cdot 3\cdot 2\cdot 1)(4\cdot 3\cdot 2\cdot 1) = 120\cdot 24 = 2880
 $$
 
 ---
@@ -619,7 +619,7 @@ Solución:
 a) Sin restricciones, se ordenan 8 personas distintas:
 
 $$
-N_a = 8! = 40320
+N_a = 8! = 8\cdot 7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 40320
 $$
 
 b) Si cada pareja se sienta junta:
@@ -627,19 +627,19 @@ b) Si cada pareja se sienta junta:
 Trato cada pareja como bloque ($4$ bloques):
 
 $$
-4!
+4! = 4\cdot 3\cdot 2\cdot 1
 $$
 
 Dentro de cada bloque, la pareja puede ordenarse de $2$ formas. Para 4 parejas:
 
 $$
-2^4
+2^4 = 2\cdot 2\cdot 2\cdot 2
 $$
 
 Entonces:
 
 $$
-N_b = 4!\cdot 2^4 = 24\cdot 16 = 384
+N_b = (4\cdot 3\cdot 2\cdot 1)\cdot 2^4 = 24\cdot 16 = 384
 $$
 
 c) Si todos los hombres se sientan juntos a la derecha de todas las mujeres:
@@ -648,7 +648,7 @@ c) Si todos los hombres se sientan juntos a la derecha de todas las mujeres:
 - los 4 hombres ocupan los 4 de la derecha, en $4!$ formas.
 
 $$
-N_c = 4!\cdot 4! = 24\cdot 24 = 576
+N_c = (4\cdot 3\cdot 2\cdot 1)(4\cdot 3\cdot 2\cdot 1) = 24\cdot 24 = 576
 $$
 
 ---
@@ -666,13 +666,13 @@ Solución:
 a) Ordenamientos posibles de los 8 finalistas:
 
 $$
-N_a = 8! = 40320
+N_a = 8! = 8\cdot 7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 40320
 $$
 
 b) Ordenamientos de los 3 primeros lugares (importa el orden):
 
 $$
-N_b = P(8,3) = \frac{8!}{(8-3)!} = 8\cdot 7\cdot 6 = 336
+N_b = P(8,3) = \frac{8!}{(8-3)!} = \frac{8\cdot 7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}{5\cdot 4\cdot 3\cdot 2\cdot 1} = 8\cdot 7\cdot 6 = 336
 $$
 
 ---
@@ -694,7 +694,7 @@ $$
 Resultado:
 
 $$
-N = \frac{8!}{3!} = 8\cdot 7\cdot 6\cdot 5\cdot 4 = 6720
+N = \frac{8\cdot 7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}{3\cdot 2\cdot 1} = 8\cdot 7\cdot 6\cdot 5\cdot 4 = 6720
 $$
 
 ---
@@ -718,7 +718,7 @@ $$
 Resultado:
 
 $$
-N = \frac{6!}{2!} = 6\cdot 5\cdot 4\cdot 3 = 360
+N = \frac{6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}{2\cdot 1} = 6\cdot 5\cdot 4\cdot 3 = 360
 $$
 
 ---
@@ -741,14 +741,12 @@ $$
 N = 59280
 $$
 
-[Pendiente redactar desarrollo estilo clase]
-
 Desarrollo breve:
 
 También se puede expresar como permutación, porque el orden de premio importa (primero, segundo y tercero):
 
 $$
-N = P(40,3) = \frac{40!}{(40-3)!} = \frac{40!}{37!} = 40\cdot 39\cdot 38 = 59280
+N = P(40,3) = \frac{40!}{(40-3)!} = \frac{40\cdot 39\cdot 38\cdot 37!}{37!} = 40\cdot 39\cdot 38 = 59280
 $$
 
 ---
