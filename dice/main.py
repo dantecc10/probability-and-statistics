@@ -176,15 +176,25 @@ class DiceApp:
 		self.btn_n = ttk.Button(controles, text="Lanzar N veces", command=self.lanzar_n_veces)
 		self.btn_n.grid(row=1, column=2, padx=4, pady=4, sticky="ew")
 
+		self.lbl_segundos = ttk.Label(controles, text="Duracion (s):")
+		self.lbl_segundos.grid(row=2, column=0, padx=4, pady=4, sticky="ew")
+
+		self.entrada_segundos = ttk.Entry(controles, width=8)
+		self.entrada_segundos.insert(0, "5")
+		self.entrada_segundos.grid(row=2, column=1, padx=4, pady=4, sticky="e")
+
+		self.btn_tiempo = ttk.Button(controles, text="Lanzar por tiempo", command=self.lanzar_por_tiempo)
+		self.btn_tiempo.grid(row=2, column=2, padx=4, pady=4, sticky="ew")
+
 		self.lbl_trabajadores = ttk.Label(controles, text="Procesos paralelos:")
-		self.lbl_trabajadores.grid(row=4, column=0, padx=4, pady=4, sticky="ew")
+		self.lbl_trabajadores.grid(row=5, column=0, padx=4, pady=4, sticky="ew")
 
 		self.entrada_trabajadores = ttk.Entry(controles, width=8)
 		self.entrada_trabajadores.insert(0, "auto")
-		self.entrada_trabajadores.grid(row=4, column=2, padx=4, pady=4, sticky="w")
+		self.entrada_trabajadores.grid(row=5, column=2, padx=4, pady=4, sticky="w")
 
 		self.lbl_modo = ttk.Label(controles, text="Modo ejecución:")
-		self.lbl_modo.grid(row=5, column=0, padx=4, pady=4, sticky="ew")
+		self.lbl_modo.grid(row=6, column=0, padx=4, pady=4, sticky="ew")
 
 		self.combo_modo = ttk.Combobox(
 			controles,
@@ -193,7 +203,7 @@ class DiceApp:
 			values=["CPU", "GPU", "AUTO", "AMBAS"],
 			width=12,
 		)
-		self.combo_modo.grid(row=5, column=2, padx=4, pady=4, sticky="w")
+		self.combo_modo.grid(row=6, column=2, padx=4, pady=4, sticky="w")
 		self.combo_modo.set("AUTO")
 
 		self.btn_benchmark = ttk.Button(
@@ -201,27 +211,27 @@ class DiceApp:
 			text="Benchmark modos",
 			command=self.mostrar_benchmark_modos,
 		)
-		self.btn_benchmark.grid(row=5, column=1, padx=4, pady=4, sticky="ew")
+		self.btn_benchmark.grid(row=6, column=1, padx=4, pady=4, sticky="ew")
 
 		self.btn_hist = ttk.Button(controles, text="Histograma", command=self.mostrar_histograma)
-		self.btn_hist.grid(row=2, column=0, padx=4, pady=4, sticky="ew")
+		self.btn_hist.grid(row=3, column=0, padx=4, pady=4, sticky="ew")
 
 		self.btn_graf = ttk.Button(controles, text="Graficar resultados", command=self.mostrar_grafica)
-		self.btn_graf.grid(row=2, column=2, padx=4, pady=4, sticky="ew")
+		self.btn_graf.grid(row=3, column=2, padx=4, pady=4, sticky="ew")
 
 		self.btn_lista_espacio = ttk.Button(
 			controles,
 			text="Ver espacio muestral",
 			command=self.mostrar_lista_espacio_muestral,
 		)
-		self.btn_lista_espacio.grid(row=3, column=0, padx=4, pady=4, sticky="ew")
+		self.btn_lista_espacio.grid(row=4, column=0, padx=4, pady=4, sticky="ew")
 
 		self.btn_hist_espacio = ttk.Button(
 			controles,
 			text="Histograma espacio",
 			command=self.mostrar_histograma_espacio_muestral,
 		)
-		self.btn_hist_espacio.grid(row=3, column=2, padx=4, pady=4, sticky="ew")
+		self.btn_hist_espacio.grid(row=4, column=2, padx=4, pady=4, sticky="ew")
 
 		for i in (0, 2):
 			controles.columnconfigure(i, weight=1)
@@ -1606,6 +1616,7 @@ class DiceApp:
 			"historial_recortado": self.historial_recortado,
 			"seleccionados": sorted(self.seleccionados),
 			"cantidad_dados": self.cantidad_dados,
+			"duracion_segundos": self.entrada_segundos.get().strip(),
 			"modo_ejecucion": self._modo_solicitado(),
 			"benchmark_perfiles": self._serializar_benchmark_perfiles(),
 			"resumenes_por_dimension": self._serializar_resumenes(),
@@ -1686,6 +1697,9 @@ class DiceApp:
 		self.modo_ejecucion_var.set(modo_sesion)
 		self.entrada_dados.delete(0, "end")
 		self.entrada_dados.insert(0, str(self.cantidad_dados))
+		segundos_sesion = str(payload.get("duracion_segundos", self.entrada_segundos.get().strip() or "5"))
+		self.entrada_segundos.delete(0, "end")
+		self.entrada_segundos.insert(0, segundos_sesion)
 		self._actualizar_espacio_muestral()
 
 		if not self._cargar_resumenes_serializados(resumenes_serializados):
@@ -1727,6 +1741,7 @@ class DiceApp:
 		self.animando = True
 		self.btn_lanzar.configure(state="disabled")
 		self.btn_n.configure(state="disabled")
+		self.btn_tiempo.configure(state="disabled")
 		self.lbl_estado.config(text="Lanzando...")
 		self._animar_paso(0, 14)
 
@@ -1744,6 +1759,138 @@ class DiceApp:
 		self.animando = False
 		self.btn_lanzar.configure(state="normal")
 		self.btn_n.configure(state="normal")
+		self.btn_tiempo.configure(state="normal")
+
+	def lanzar_por_tiempo(self) -> None:
+		if self.animando or self._postprocesando_simulacion or (self._sim_thread is not None and self._sim_thread.is_alive()):
+			return
+
+		cantidad_dados = self._obtener_cantidad_dados()
+		if cantidad_dados is None:
+			return
+		self.cantidad_dados = cantidad_dados
+		self._actualizar_espacio_muestral()
+
+		trabajadores = self._obtener_trabajadores()
+		if trabajadores is None:
+			return
+
+		texto = self.entrada_segundos.get().strip().replace(",", ".")
+		try:
+			segundos_objetivo = float(texto)
+		except ValueError:
+			self.lbl_estado.config(text="Ingresa un numero positivo de segundos.")
+			return
+
+		if segundos_objetivo <= 0:
+			self.lbl_estado.config(text="Ingresa un numero positivo de segundos.")
+			return
+
+		modo_solicitado = self._modo_solicitado()
+		modo_real, nota = self._resolver_modo_real(modo_solicitado, UMBRAL_GPU_AUTO)
+		self.logger.info(
+			"Lanzar por tiempo | segundos=%.3f | dados=%s | modo_solicitado=%s | modo_real=%s | trabajadores=%s",
+			segundos_objetivo,
+			self.cantidad_dados,
+			modo_solicitado,
+			modo_real,
+			trabajadores,
+		)
+
+		self.btn_lanzar.configure(state="disabled")
+		self.btn_n.configure(state="disabled")
+		self.btn_tiempo.configure(state="disabled")
+
+		total_ms = max(1, int(segundos_objetivo * 1000))
+		self._mostrar_loader("Generando datos por tiempo", total_ms)
+
+		while not self._progreso_queue.empty():
+			try:
+				self._progreso_queue.get_nowait()
+			except queue.Empty:
+				break
+
+		self._ultimo_bucket_log = -1
+
+		def _worker_tiempo():
+			ultimo: tuple[int, ...] = tuple()
+			muestra_para_historial: list[tuple[int, ...]] = []
+			inicio = time.perf_counter()
+			generados = 0
+			etapa_loader = f"{modo_real} por tiempo"
+			lote_base = TAMANIO_LOTE_GPU if modo_real in {"GPU", "AMBAS"} else max(UMBRAL_PARALELISMO, 60000)
+
+			try:
+				while True:
+					transcurrido = time.perf_counter() - inicio
+					if transcurrido >= segundos_objetivo:
+						break
+
+					restante = segundos_objetivo - transcurrido
+					lote = lote_base if restante > 0.25 else max(1000, lote_base // 4)
+
+					if modo_real == "CPU":
+						muestra, ultimo, fue_paralelo = self._ejecutar_cpu(lote, trabajadores)
+						generados += lote
+						if fue_paralelo:
+							muestra_para_historial.extend(muestra)
+							self.historial_recortado = True
+
+					elif modo_real == "GPU":
+						muestra, ultimo = self._simular_gpu_con_resumen(lote, self.cantidad_dados)
+						generados += lote
+						muestra_para_historial.extend(muestra)
+						self.historial_recortado = True
+
+					else:
+						cantidad_gpu = lote // 2
+						cantidad_cpu = lote - cantidad_gpu
+
+						if cantidad_gpu > 0:
+							muestra_gpu, ultimo_gpu = self._simular_gpu_con_resumen(cantidad_gpu, self.cantidad_dados)
+							muestra_para_historial.extend(muestra_gpu)
+							ultimo = ultimo_gpu if ultimo_gpu else ultimo
+
+						muestra_cpu, ultimo_cpu, cpu_fue_paralelo = self._ejecutar_cpu(cantidad_cpu, trabajadores)
+						if cpu_fue_paralelo:
+							muestra_para_historial.extend(muestra_cpu)
+						if ultimo_cpu:
+							ultimo = ultimo_cpu
+
+						generados += lote
+						self.historial_recortado = True
+
+					transcurrido_ms = min(total_ms, int((time.perf_counter() - inicio) * 1000))
+					self._actualizar_loader(transcurrido_ms, total_ms, etapa_loader)
+
+			except Exception as exc:
+				self.logger.exception("Error en simulacion por tiempo | modo=%s", modo_real)
+				self._pending_result = {"error": str(exc)}
+				self._progreso_queue.put(None)
+				return
+
+			if muestra_para_historial:
+				self._registrar_muestra_historial(muestra_para_historial)
+			if ultimo:
+				self._pending_ultimo = ultimo
+
+			duracion_real = time.perf_counter() - inicio
+			nota_str = f" {nota}" if nota else ""
+			self._pending_result = {
+				"texto_estado": (
+					f"Se registraron {generados} experimentos en {duracion_real:.2f}s "
+					+ f"(objetivo {segundos_objetivo:.2f}s, modo {modo_real})."
+					+ nota_str
+				),
+				"nota": nota,
+			}
+			self._progreso_queue.put(None)
+
+		self._pending_result = None
+		self._pending_ultimo = tuple()
+		self._sim_thread = threading.Thread(target=_worker_tiempo, daemon=True)
+		self._sim_thread.start()
+		self.root.after(40, self._poll_progreso)
 
 	def lanzar_n_veces(self) -> None:
 		if self.animando or self._postprocesando_simulacion or (self._sim_thread is not None and self._sim_thread.is_alive()):
@@ -1779,6 +1926,7 @@ class DiceApp:
 		# Deshabilitar botones mientras corre la simulación
 		self.btn_lanzar.configure(state="disabled")
 		self.btn_n.configure(state="disabled")
+		self.btn_tiempo.configure(state="disabled")
 		self._mostrar_loader("Generando datos", cantidad)
 
 		# Vaciar cola de progreso de ejecuciones previas
@@ -1885,6 +2033,7 @@ class DiceApp:
 		"""Llamado desde el hilo principal tras confirmar que el worker terminó."""
 		self.btn_lanzar.configure(state="normal")
 		self.btn_n.configure(state="normal")
+		self.btn_tiempo.configure(state="normal")
 		self._sim_thread = None
 
 		result = getattr(self, "_pending_result", None)
