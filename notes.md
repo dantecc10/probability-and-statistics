@@ -963,3 +963,23 @@ $b^3 - a^3 = (b - a) \cdot (b^2 + ba + a^2)$
 $b^2 - a^2 = (b - a) \cdot (b + a)$
 
 $\mu = (\frac{b + a}{2})^2$
+
+### Actividad - Notas Capítulo 1
+El uso de métodos estadísticos en la industria implica el acopio de información o datos científicos. Desde los años 80's y en lo que va del siglo XXI la industria estadounidense ha puesto atención en el mejoramiento de la calidad.
+
+Existen ejemplos como el "milagro industrial" en Japón, el cual en gran parte tuvo éxito desarrollando la industria japonesa al usar métodos estadísticos e implementar el pensamiento estadístico entre el personal gerencial. Ese control científico de la calidad es lo que ha hecho claramente la diferencia.
+
+Con todo y esto, hay una diferencia grande entre el acopio de información y la estadística inferencial.
+
+#### Estadística inferencial
+La estadística inferencial generó un número enormde de herramientas de los métodos estadísticos, que se diseñan para poder hacer juicios científicos frente a la incertidumbre y a la variación.
+
+#### Variabilidad en los datos científicos
+La variabilidad siempre se encuentra en datos científicos.
+
+Los investigadores de la estadística han originado un gran número de métodos analíticos que permiten efectuar análisis de datos obtenidos de diversos sistemas.
+
+La variabilidad es la razón por la que la probabilidad es importante; ya que repetir un experimento varias veces suele dar resultados muy diversos ante la diferencia de las condiciones y de los factores.
+
+#### La probabilidad
+El estudio de la probabilidad precede al de la inferencia estadística. Los elementos de la probabilidad nos permiten
