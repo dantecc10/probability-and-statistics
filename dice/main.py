@@ -22,6 +22,7 @@ except Exception:  # pragma: no cover - opcional en tiempo de ejecucion
 
 PALETA_DADOS = ["#d62828", "#1df700", "#1e3adb", "#2a9d8f", "#e7e42c", "#7b2cbf", "#9B1960", "#36250f"]
 MAXIMO_HISTORIAL_MUESTRA = 3000
+MAXIMO_HISTORIAL_RENDER_UI = 800
 UMBRAL_PARALELISMO = 50000
 UMBRAL_GPU_AUTO = 40000
 TAMANIO_LOTE_GPU = 120000
@@ -186,15 +187,22 @@ class DiceApp:
 		self.btn_tiempo = ttk.Button(controles, text="Lanzar por tiempo", command=self.lanzar_por_tiempo)
 		self.btn_tiempo.grid(row=2, column=2, padx=4, pady=4, sticky="ew")
 
+		self.lbl_lote = ttk.Label(controles, text="Tamano lote:")
+		self.lbl_lote.grid(row=5, column=0, padx=4, pady=4, sticky="ew")
+
+		self.entrada_lote = ttk.Entry(controles, width=8)
+		self.entrada_lote.insert(0, "auto")
+		self.entrada_lote.grid(row=5, column=1, padx=4, pady=4, sticky="e")
+
 		self.lbl_trabajadores = ttk.Label(controles, text="Procesos paralelos:")
-		self.lbl_trabajadores.grid(row=5, column=0, padx=4, pady=4, sticky="ew")
+		self.lbl_trabajadores.grid(row=6, column=0, padx=4, pady=4, sticky="ew")
 
 		self.entrada_trabajadores = ttk.Entry(controles, width=8)
 		self.entrada_trabajadores.insert(0, "auto")
-		self.entrada_trabajadores.grid(row=5, column=2, padx=4, pady=4, sticky="w")
+		self.entrada_trabajadores.grid(row=6, column=2, padx=4, pady=4, sticky="w")
 
 		self.lbl_modo = ttk.Label(controles, text="Modo ejecución:")
-		self.lbl_modo.grid(row=6, column=0, padx=4, pady=4, sticky="ew")
+		self.lbl_modo.grid(row=7, column=0, padx=4, pady=4, sticky="ew")
 
 		self.combo_modo = ttk.Combobox(
 			controles,
@@ -203,7 +211,7 @@ class DiceApp:
 			values=["CPU", "GPU", "AUTO", "AMBAS"],
 			width=12,
 		)
-		self.combo_modo.grid(row=6, column=2, padx=4, pady=4, sticky="w")
+		self.combo_modo.grid(row=7, column=2, padx=4, pady=4, sticky="w")
 		self.combo_modo.set("AUTO")
 
 		self.btn_benchmark = ttk.Button(
@@ -211,7 +219,7 @@ class DiceApp:
 			text="Benchmark modos",
 			command=self.mostrar_benchmark_modos,
 		)
-		self.btn_benchmark.grid(row=6, column=1, padx=4, pady=4, sticky="ew")
+		self.btn_benchmark.grid(row=7, column=1, padx=4, pady=4, sticky="ew")
 
 		self.btn_hist = ttk.Button(controles, text="Histograma", command=self.mostrar_histograma)
 		self.btn_hist.grid(row=3, column=0, padx=4, pady=4, sticky="ew")
@@ -348,6 +356,15 @@ class DiceApp:
 			return os.cpu_count() or 1
 		if not texto.isdigit() or int(texto) <= 0:
 			self.lbl_estado.config(text="Ingresa un número positivo de procesos o 'auto'.")
+			return None
+		return int(texto)
+
+	def _obtener_tamanio_lote(self) -> int | None:
+		texto = self.entrada_lote.get().strip().lower()
+		if texto in {"", "auto", "0"}:
+			return 0
+		if not texto.isdigit() or int(texto) <= 0:
+			self.lbl_estado.config(text="Ingresa un tamano de lote positivo o 'auto'.")
 			return None
 		return int(texto)
 
@@ -556,16 +573,19 @@ class DiceApp:
 		self,
 		cantidad_experimentos: int,
 		cantidad_dados: int,
+		tamanio_lote_gpu: int = TAMANIO_LOTE_GPU,
 		progreso_cb: Callable[[int], None] | None = None,
 	) -> tuple[list[tuple[int, ...]], tuple[int, ...]]:
 		if cp is None or not self._gpu_disponible_cache or cantidad_experimentos <= 0:
 			return [], tuple()
 
+		tamanio_lote_gpu = max(1, int(tamanio_lote_gpu))
+
 		self.logger.info(
 			"GPU inicio | experimentos=%s | dados=%s | lote_max=%s",
 			cantidad_experimentos,
 			cantidad_dados,
-			TAMANIO_LOTE_GPU,
+			tamanio_lote_gpu,
 		)
 
 		muestra: list[tuple[int, ...]] = []
@@ -574,7 +594,7 @@ class DiceApp:
 		procesados = 0
 
 		while restante > 0:
-			lote = min(TAMANIO_LOTE_GPU, restante)
+			lote = min(tamanio_lote_gpu, restante)
 			self.logger.info("GPU lote inicio | lote=%s | restante_antes=%s", lote, restante)
 			datos_gpu = cp.random.randint(1, 7, size=(lote, cantidad_dados), dtype=cp.int16)
 			cp.cuda.Stream.null.synchronize()
@@ -1097,27 +1117,23 @@ class DiceApp:
 			else:
 				self.txt_historial.insert("1.0", "Aún no hay lanzamientos.")
 		else:
+			total_historial = len(self.historial)
+			mostrar_desde = max(0, total_historial - MAXIMO_HISTORIAL_RENDER_UI)
+			historial_ui = self.historial[mostrar_desde:]
+
+			prefijos: list[str] = []
 			if self.historial_recortado:
-				self.txt_historial.insert(
-					"1.0",
-					"Mostrando solo una muestra reciente de los resultados en memoria.\n\n",
+				prefijos.append("Mostrando solo una muestra reciente de los resultados en memoria.")
+			if mostrar_desde > 0:
+				prefijos.append(
+					f"Render UI limitado a los ultimos {len(historial_ui)} de {total_historial} experimentos para mantener fluidez."
 				)
-			# Crear tags de color por índice de dado (uno por color de paleta)
-			for i, color in enumerate(PALETA_DADOS):
-				tag = f"dado_{i}"
-				self.txt_historial.tag_configure(tag, foreground=color)
-			primero = True
-			for experimento in self.historial:
-				if not primero:
-					self.txt_historial.insert("end", ", ")
-				primero = False
-				self.txt_historial.insert("end", "(")
-				for j, valor in enumerate(experimento):
-					if j > 0:
-						self.txt_historial.insert("end", ", ")
-					tag = f"dado_{j % len(PALETA_DADOS)}"
-					self.txt_historial.insert("end", str(valor), tag)
-				self.txt_historial.insert("end", ")")
+
+			texto_historial = ", ".join(str(experimento) for experimento in historial_ui)
+			if prefijos:
+				self.txt_historial.insert("1.0", "\n".join(prefijos) + "\n\n" + texto_historial)
+			else:
+				self.txt_historial.insert("1.0", texto_historial)
 		self.txt_historial.configure(state="disabled")
 
 	def _obtener_resultados_individuales(self) -> list[int]:
@@ -1617,6 +1633,7 @@ class DiceApp:
 			"seleccionados": sorted(self.seleccionados),
 			"cantidad_dados": self.cantidad_dados,
 			"duracion_segundos": self.entrada_segundos.get().strip(),
+			"tamanio_lote": self.entrada_lote.get().strip(),
 			"modo_ejecucion": self._modo_solicitado(),
 			"benchmark_perfiles": self._serializar_benchmark_perfiles(),
 			"resumenes_por_dimension": self._serializar_resumenes(),
@@ -1700,6 +1717,9 @@ class DiceApp:
 		segundos_sesion = str(payload.get("duracion_segundos", self.entrada_segundos.get().strip() or "5"))
 		self.entrada_segundos.delete(0, "end")
 		self.entrada_segundos.insert(0, segundos_sesion)
+		lote_sesion = str(payload.get("tamanio_lote", self.entrada_lote.get().strip() or "auto"))
+		self.entrada_lote.delete(0, "end")
+		self.entrada_lote.insert(0, lote_sesion)
 		self._actualizar_espacio_muestral()
 
 		if not self._cargar_resumenes_serializados(resumenes_serializados):
@@ -1775,6 +1795,10 @@ class DiceApp:
 		if trabajadores is None:
 			return
 
+		tamanio_lote = self._obtener_tamanio_lote()
+		if tamanio_lote is None:
+			return
+
 		texto = self.entrada_segundos.get().strip().replace(",", ".")
 		try:
 			segundos_objetivo = float(texto)
@@ -1789,12 +1813,13 @@ class DiceApp:
 		modo_solicitado = self._modo_solicitado()
 		modo_real, nota = self._resolver_modo_real(modo_solicitado, UMBRAL_GPU_AUTO)
 		self.logger.info(
-			"Lanzar por tiempo | segundos=%.3f | dados=%s | modo_solicitado=%s | modo_real=%s | trabajadores=%s",
+			"Lanzar por tiempo | segundos=%.3f | dados=%s | modo_solicitado=%s | modo_real=%s | trabajadores=%s | lote=%s",
 			segundos_objetivo,
 			self.cantidad_dados,
 			modo_solicitado,
 			modo_real,
 			trabajadores,
+			tamanio_lote if tamanio_lote > 0 else "auto",
 		)
 
 		self.btn_lanzar.configure(state="disabled")
@@ -1818,7 +1843,10 @@ class DiceApp:
 			inicio = time.perf_counter()
 			generados = 0
 			etapa_loader = f"{modo_real} por tiempo"
-			lote_base = TAMANIO_LOTE_GPU if modo_real in {"GPU", "AMBAS"} else max(UMBRAL_PARALELISMO, 60000)
+			if tamanio_lote > 0:
+				lote_base = tamanio_lote
+			else:
+				lote_base = TAMANIO_LOTE_GPU if modo_real in {"GPU", "AMBAS"} else max(UMBRAL_PARALELISMO, 60000)
 
 			try:
 				while True:
@@ -1827,7 +1855,10 @@ class DiceApp:
 						break
 
 					restante = segundos_objetivo - transcurrido
-					lote = lote_base if restante > 0.25 else max(1000, lote_base // 4)
+					if tamanio_lote > 0:
+						lote = lote_base
+					else:
+						lote = lote_base if restante > 0.25 else max(1000, lote_base // 4)
 
 					if modo_real == "CPU":
 						muestra, ultimo, fue_paralelo = self._ejecutar_cpu(lote, trabajadores)
@@ -1837,7 +1868,11 @@ class DiceApp:
 							self.historial_recortado = True
 
 					elif modo_real == "GPU":
-						muestra, ultimo = self._simular_gpu_con_resumen(lote, self.cantidad_dados)
+						muestra, ultimo = self._simular_gpu_con_resumen(
+							lote,
+							self.cantidad_dados,
+							tamanio_lote_gpu=lote_base,
+						)
 						generados += lote
 						muestra_para_historial.extend(muestra)
 						self.historial_recortado = True
@@ -1847,7 +1882,11 @@ class DiceApp:
 						cantidad_cpu = lote - cantidad_gpu
 
 						if cantidad_gpu > 0:
-							muestra_gpu, ultimo_gpu = self._simular_gpu_con_resumen(cantidad_gpu, self.cantidad_dados)
+							muestra_gpu, ultimo_gpu = self._simular_gpu_con_resumen(
+								cantidad_gpu,
+								self.cantidad_dados,
+								tamanio_lote_gpu=lote_base,
+							)
 							muestra_para_historial.extend(muestra_gpu)
 							ultimo = ultimo_gpu if ultimo_gpu else ultimo
 
@@ -2059,10 +2098,21 @@ class DiceApp:
 		self.root.after_idle(self._completar_postproceso_simulacion)
 
 	def _completar_postproceso_simulacion(self) -> None:
+		# Dividir el postproceso en dos ticks reduce bloqueos visibles del event loop.
+		self.root.after(1, self._postproceso_paso_estadisticas)
+
+	def _postproceso_paso_estadisticas(self) -> None:
+		inicio = time.perf_counter()
+		self._actualizar_estadisticas()
+		self.logger.info("Postproceso UI | estadisticas=%.4fs", time.perf_counter() - inicio)
+		self.root.after(1, self._postproceso_paso_historial)
+
+	def _postproceso_paso_historial(self) -> None:
+		inicio = time.perf_counter()
 		try:
 			self._actualizar_historial()
-			self._actualizar_estadisticas()
 		finally:
+			self.logger.info("Postproceso UI | historial=%.4fs", time.perf_counter() - inicio)
 			self._postprocesando_simulacion = False
 
 

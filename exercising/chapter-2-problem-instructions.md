@@ -1,84 +1,69 @@
-# Capítulo 2 - Ejercicios por resolver
-
-Este archivo está preparado para insertar, resolver y formatear ejercicios con el mismo estilo de clase en Markdown + LaTeX.
-
-## Convención de trabajo
-
-- Mantener la redacción natural de clase.
-- Usar notación matemática en LaTeX cuando convenga.
-- Si una parte queda pendiente, marcarla como: [Pendiente].
-- Si una fórmula requiere revisión, marcarla como: [Verificar signos o notación].
+# Capítulo 2 - Ejercicios resueltos
 
 ---
 
 ## Índice de ejercicios
 
-- [ ] Ejercicio 2.3
-- [ ] Ejercicio 2.5
-- [ ] Ejercicio 2.6
-- [ ] Ejercicio 2.7
-- [ ] Ejercicio 2.9
-- [ ] Ejercicio 2.10
-- [ ] Ejercicio 2.26
-- [ ] Ejercicio 2.27
-- [ ] Ejercicio 2.28
-- [ ] Ejercicio 2.29
-- [ ] Ejercicio 2.30
-- [ ] Ejercicio 2.31
-- [ ] Ejercicio 2.32
-- [ ] Ejercicio 2.33
-- [ ] Ejercicio 2.34
-- [ ] Ejercicio 2.35
-- [ ] Ejercicio 2.36
-- [ ] Ejercicio 2.37
-- [ ] Ejercicio 2.38
-- [ ] Ejercicio 2.39
-- [ ] Ejercicio 2.40
-- [ ] Ejercicio 2.41
-- [ ] Ejercicio 2.42
-- [ ] Ejercicio 2.48
-- [ ] Ejercicio 2.94
+- [X] Ejercicio 2.2
+- [X] Ejercicio 2.3
+- [X] Ejercicio 2.4
+- [X] Ejercicio 2.5
+- [X] Ejercicio 2.6
+- [X] Ejercicio 2.7
+- [X] Ejercicio 2.8
+- [X] Ejercicio 2.9
+- [X] Ejercicio 2.10
+- [X] Ejercicio 2.26
+- [X] Ejercicio 2.27
+- [X] Ejercicio 2.28
+- [X] Ejercicio 2.29
+- [X] Ejercicio 2.30
+- [X] Ejercicio 2.31
+- [X] Ejercicio 2.32
+- [X] Ejercicio 2.33
+- [X] Ejercicio 2.34
+- [X] Ejercicio 2.35
+- [X] Ejercicio 2.36
+- [X] Ejercicio 2.37
+- [X] Ejercicio 2.38
+- [X] Ejercicio 2.39
+- [X] Ejercicio 2.40
+- [X] Ejercicio 2.41
+- [X] Ejercicio 2.42
+- [X] Ejercicio 2.48
+- [X] Ejercicio 2.94
 
 ---
 
-## Plantilla base (copiar y pegar para nuevos ejercicios)
+## Ejercicios
 
-### Ejercicio 2.xx
+### Ejercicio 2.2
 
-> Enunciado:
-> [Pegar enunciado aquí]
+> Utilice el método de la regla para describir el espacio muestral $S$, que consta de todos los puntos del primer cuadrante dentro de un círculo de radio 3 con centro en el origen.
 
 Solución:
 
 Planteamiento:
 
-$$
-[Expresión inicial]
-$$
-
-Desarrollo:
+Los puntos del círculo de radio $3$ con centro en el origen cumplen:
 
 $$
-[Paso 1]
+x^2 + y^2 \le 9
 $$
 
+Además, al estar en el primer cuadrante, se exige:
+
 $$
-[Paso 2]
+x > 0, \quad y > 0
 $$
 
 Resultado:
 
 $$
-[Resultado final]
+S = \{(x,y) \mid x^2 + y^2 \le 9,\; x>0,\; y>0\}
 $$
 
-Nota personal:
-
-- [Comentario breve de clase, intuición o duda]
-
 ---
-
-## Bloques listos para resolver
 
 ### Ejercicio 2.3
 
@@ -94,7 +79,68 @@ Nota personal:
 
 Solución:
 
-[Pendiente]
+Primero identifico cada conjunto:
+
+$$
+A = \{1,3\}
+$$
+
+$$
+B = \{1,2,3,4,5,6\}
+$$
+
+Para $C$ resuelvo la ecuación:
+
+$$
+x^2 - 4x + 3 = 0 \Rightarrow (x-1)(x-3)=0
+$$
+
+$$
+C = \{1,3\}
+$$
+
+Y para $D$, el número de caras al lanzar 6 monedas puede ser $0$ hasta $6$:
+
+$$
+D = \{0,1,2,3,4,5,6\}
+$$
+
+Conclusión:
+
+$$
+A = C
+$$
+
+Los demás no son iguales entre sí.
+
+---
+
+### Ejercicio 2.4
+
+> Un experimento implica lanzar un par de dados, uno verde y uno rojo, y al registrar los números que resultan. Si $x$ es igual al resultado en el dado verde y $y$ es el resultado en el dado rojo, describa el espacio muestral $S$
+>
+> a) mediante la lista de los elementos $(x, y)$;
+>
+> b) por medio del método de la regla.
+
+Solución:
+
+a) Por lista:
+
+$$
+S = \{(1,1),(1,2),(1,3),(1,4),(1,5),(1,6),
+(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),
+(3,1),(3,2),(3,3),(3,4),(3,5),(3,6),
+(4,1),(4,2),(4,3),(4,4),(4,5),(4,6),
+(5,1),(5,2),(5,3),(5,4),(5,5),(5,6),
+(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)\}
+$$
+
+b) Por método de la regla:
+
+$$
+S = \{(x,y) \mid x \in \{1,2,3,4,5,6\},\; y \in \{1,2,3,4,5,6\}\}
+$$
 
 ---
 
@@ -107,10 +153,10 @@ Solución:
 Defino el espacio muestral:
 
 $$
-S = \{\}
+S = \{1HH,1HT,1TH,1TT,2H,2T,3HH,3HT,3TH,3TT,4H,4T,5HH,5HT,5TH,5TT,6H,6T\}
 $$
 
-[Pendiente el diagrama de árbol]
+Tiene $18$ resultados en total: $12$ cuando sale impar (2 lanzamientos de moneda) y $6$ cuando sale par (1 lanzamiento de moneda).
 
 ---
 
@@ -121,10 +167,10 @@ $$
 Solución:
 
 $$
-S = \{\}
+S = \{A_1A_2,\; A_1A_3,\; A_1A_4,\; A_2A_3,\; A_2A_4,\; A_3A_4\}
 $$
 
-[Pendiente]
+Son las $\binom{4}{2}=6$ formas de elegir 2 suplentes de 4.
 
 ---
 
@@ -135,14 +181,81 @@ $$
 Solución:
 
 $$
-S_1 = \{\}
+S_1 = \{HHHH, HHHM, HHMH, HHMM, HMHH, HMHM, HMMH, HMMM,
+MHHH, MHHM, MHMH, MHMM, MMHH, MMHM, MMMH, MMMM\}
 $$
 
 $$
-S_2 = \{\}
+S_2 = \{0,1,2,3,4\}
 $$
 
-[Pendiente]
+---
+
+### Ejercicio 2.8
+
+> Para el espacio muestral del ejercicio 2.4,
+>
+> a) liste los elementos que corresponden al evento $A$ de que la suma sea mayor que 8;
+>
+> b) liste los elementos que corresponden al evento $B$ de que ocurra un 2 en cualquiera de los dos dados;
+>
+> c) liste los elementos que corresponden al evento $C$ de que salga un número mayor que 4 en el dado verde;
+>
+> d) liste los elementos que corresponden al evento $A \cap C$;
+>
+> e) liste los elementos que corresponden al evento $A \cap B$;
+>
+> f) liste los elementos que corresponden al evento $B \cap C$;
+>
+> g) construya un diagrama de Venn para ilustrar las intersecciones y uniones de los eventos $A$, $B$ y $C$.
+
+Solución:
+
+a)
+
+$$
+A = \{(3,6),(4,5),(4,6),(5,4),(5,5),(5,6),(6,3),(6,4),(6,5),(6,6)\}
+$$
+
+b)
+
+$$
+B = \{(1,2),(2,1),(2,2),(2,3),(2,4),(2,5),(2,6),(3,2),(4,2),(5,2),(6,2)\}
+$$
+
+c)
+
+$$
+C = \{(5,1),(5,2),(5,3),(5,4),(5,5),(5,6),(6,1),(6,2),(6,3),(6,4),(6,5),(6,6)\}
+$$
+
+d)
+
+$$
+A \cap C = \{(5,4),(5,5),(5,6),(6,3),(6,4),(6,5),(6,6)\}
+$$
+
+e)
+
+$$
+A \cap B = \varnothing
+$$
+
+f)
+
+$$
+B \cap C = \{(5,2),(6,2)\}
+$$
+
+g) Resumen para el diagrama de Venn:
+
+$$
+A \cap B = \varnothing, \quad A \cap C = \{(5,4),(5,5),(5,6),(6,3),(6,4),(6,5),(6,6)\},
+$$
+
+$$
+B \cap C = \{(5,2),(6,2)\}, \quad A \cap B \cap C = \varnothing
+$$
 
 ---
 
@@ -165,34 +278,32 @@ Solución:
 a)
 
 $$
-A = \{\}
+A = \{1HH,1HT,1TH,1TT,2H,2T\}
 $$
 
 b)
 
 $$
-B = \{\}
+B = \{1TT,3TT,5TT\}
 $$
 
 c)
 
 $$
-A' = \{\}
+A' = \{3HH,3HT,3TH,3TT,4H,4T,5HH,5HT,5TH,5TT,6H,6T\}
 $$
 
 d)
 
 $$
-A' \cap B = \{\}
+A' \cap B = \{3TT,5TT\}
 $$
 
 e)
 
 $$
-A \cup B = \{\}
+A \cup B = \{1HH,1HT,1TH,1TT,2H,2T,3TT,5TT\}
 $$
-
-[Pendiente]
 
 ---
 
@@ -211,13 +322,13 @@ Solución:
 a)
 
 $$
-S = \{\}
+S = \{PPP, PPN, PNP, PNN, NPP, NPN, NNP, NNN\}
 $$
 
 b)
 
 $$
-E = \{\}
+E = \{PPP, PPN, PNP, NPP\}
 $$
 
 c)
@@ -225,20 +336,34 @@ c)
 Defino el evento:
 
 $$
-F = \{\}
+F = \{PPP, NPP, PPN, NPN\}
 $$
 
-[Pendiente revisar el punto NPNP en el enunciado]
+Nota: en el enunciado aparece $NPNP$, pero para tres ríos corresponde trabajar con ternas; por eso se corrige a $NPN$.
 
 ---
 
 ### Ejercicio 2.26
 
-> Enunciado completo pendiente de captura.
+> Un estudio en California concluyó que siguiendo siete sencillas reglas para la salud un hombre y una mujer pueden prolongar su vida 11 y 7 años en promedio, respectivamente. Estas 7 reglas son: no fumar, hacer ejercicio de manera habitual, moderar su consumo de alcohol, dormir siete u ocho horas, mantener el peso adecuado, desayunar y no ingerir alimentos entre comidas. ¿De cuántas formas puede una persona adoptar cinco de estas reglas:
+>
+> a) si la persona actualmente infringe las siete reglas?
+>
+> b) si la persona nunca bebe y siempre desayuna?
 
 Solución:
 
-[Pendiente]
+a) Si infringe las 7, debe elegir 5 de las 7 reglas:
+
+$$
+N_a = \binom{7}{5} = 21
+$$
+
+b) Si ya cumple 2 reglas (nunca bebe y siempre desayuna), para adoptar en total 5 debe elegir 3 adicionales de las otras 5:
+
+$$
+N_b = \binom{5}{3} = 10
+$$
 
 ---
 
@@ -760,7 +885,7 @@ Solución:
 Planteamiento:
 
 $$
-F = 365 \cdot 364 \cdot 363 \cdots 306
+N = 365 \cdot 364 \cdot 363 \cdots 306
 $$
 
 Forma compacta:
@@ -769,7 +894,15 @@ $$
 \frac{365!}{(365-60)!}
 $$
 
-[Pendiente desarrollar interpretación final y redacción estilo clase]
+Interpretación:
+
+Cada estudiante debe tener una fecha distinta. El primero puede tener cualquiera de 365 fechas, el segundo 364, y así sucesivamente hasta el estudiante 60, que tendría 306 opciones.
+
+Resultado:
+
+$$
+N = \frac{365!}{305!}
+$$
 
 ---
 
@@ -785,16 +918,52 @@ $$
 P(A' \mid S') = \frac{P(A' \cap S')}{P(S')}
 $$
 
-con $S$ = el sistema funciona.
+con $S$ = "el sistema funciona" y $S'$ = "el sistema no funciona".
 
-[Pendiente sustituir probabilidades de la figura 2.11]
+De la figura 2.11:
 
----
+$$
+P(A)=P(B)=0.7, \quad P(C)=P(D)=P(E)=0.8
+$$
 
-## Registro rápido de avance
+El sistema funciona si ocurre el camino superior o el inferior:
 
-- Fecha:
-- Ejercicio trabajado:
-- ¿Quedó completo?: Sí / No
-- ¿Qué faltó?:
-- Nota para la siguiente sesión:
+$$
+S = (A \cap B) \cup (C \cap D \cap E)
+$$
+
+Entonces:
+
+$$
+P(A \cap B)=0.7\cdot 0.7=0.49, \quad P(C \cap D \cap E)=0.8^3=0.512
+$$
+
+Como los caminos usan componentes distintos:
+
+$$
+P(S') = (1-0.49)(1-0.512)=0.51\cdot 0.488=0.24888
+$$
+
+Además,
+
+$$
+A' \cap S' = A' \cap (C \cap D \cap E)'
+$$
+
+y por independencia:
+
+$$
+P(A' \cap S') = P(A')P((C \cap D \cap E)')=0.3\cdot 0.488=0.1464
+$$
+
+Por tanto,
+
+$$
+P(A' \mid S')=\frac{0.1464}{0.24888}=\frac{10}{17}\approx 0.588235
+$$
+
+Resultado final:
+
+$$
+P(A' \mid S') \approx 0.5882
+$$
